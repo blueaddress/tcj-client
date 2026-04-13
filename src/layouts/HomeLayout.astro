@@ -1,0 +1,75 @@
+---
+import Header from "../components/Shared/Header";
+const {
+    title = "TCJ Realty",
+    description = "TCJ Realty opens doors to hidden, high-potential properties that rarely hit the public market. From bank auctions to off-market gems, each listing is curated for value and vetted for transparency.",
+    canonical = "https://tcjrealty.in/",
+    ogTitle,
+    ogDescription,
+    ogImage = "https://tcjrealty.in/images/tcj-logo.jpg",
+    ogImageWidth = "1200",
+    ogImageHeight = "630",
+    ogImageAlt,
+    ogType = "website",
+    ogUrl,
+    twitterCard = "summary_large_image",
+    noIndex = false,
+    structuredData,
+    } = Astro.props;
+const structuredDataJson = structuredData ? JSON.stringify(structuredData) : null;
+
+const resolvedOgTitle = ogTitle || title;
+const resolvedOgDescription = ogDescription || description;
+const resolvedOgUrl = ogUrl || canonical;
+const resolvedOgImageAlt = ogImageAlt || resolvedOgTitle;
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="keywords" content="real estate, properties, buy property, office space, residential flats, property blog, real estate India, TCJ Realty, tcj realty" />
+        <meta name="author" content="TCJ Realty" />
+        <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+        <link rel="canonical" href={canonical} />
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content={resolvedOgTitle} />
+        <meta property="og:description" content={resolvedOgDescription} />
+        <meta property="og:url" content={resolvedOgUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content={ogImageWidth} />
+        <meta property="og:image:height" content={ogImageHeight} />
+        <meta property="og:image:alt" content={resolvedOgImageAlt} />
+        <meta property="og:type" content={ogType} />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="TCJ Realty" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content={twitterCard} />
+        <meta name="twitter:title" content={resolvedOgTitle} />
+        <meta name="twitter:description" content={resolvedOgDescription}/>
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:site" content="@tcjrealty" />
+
+        {structuredDataJson && (
+            <script type="application/ld+json" is:inline set:html={structuredDataJson} />
+        )}
+    </head>
+    <body>
+        <Header client:load/>
+        <main class="h-fit">
+            <slot />
+        </main>
+    </body>
+</html>

@@ -43,7 +43,7 @@ export default function Stats() {
   }, []);
 
   return (
-    <section className="py-20 bg-primary-bg text-white">
+    <section id="knowledge" className="py-20 bg-primary-bg text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-4">
           {stats.map((stat, index) => {

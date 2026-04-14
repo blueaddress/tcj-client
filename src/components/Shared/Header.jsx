@@ -16,9 +16,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: "home", path: "#overview" },
-    { label: "about us", path: "#projects" },
-    { label: "projects", path: "#amenities" },
+    { label: "home", path: "#" },
+    { label: "about us", path: "#about-us" },
+    { label: "projects", path: "#projects" },
     { label: "KNOWLEDGE center", path: "#knowledge" },
     { label: "PARTNER", path: "#partner" },
   ];

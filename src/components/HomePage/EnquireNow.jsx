@@ -3,7 +3,7 @@ import { Send } from "lucide-react";
 
 export default function EnquireNow() {
   return (
-    <section id="contact-us" className="py-20 lg:py-32 bg-secondary-bg">
+    <section id="contact" className="py-20 lg:py-32 bg-secondary-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row shadow-2xl overflow-hidden rounded-sm">
           

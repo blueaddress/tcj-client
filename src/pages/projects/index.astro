@@ -1,0 +1,28 @@
+---
+import '../../styles/global.css';
+import HomeLayout from '../../layouts/HomeLayout.astro';
+import ZoomWrapper from '../../components/Shared/ZoomWrapper.jsx';
+import ProjectPage from "../../components/Projects/ProjectPage.jsx";
+---
+<HomeLayout 
+	title="Projects | TCJ Realty" 
+	structuredData={{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "TCJ Realty",
+		"description":"Blue Address opens doors to hidden, high-potential properties that rarely hit the public market. From bank auctions to off-market gems, each listing is curated for value and vetted for transparency.",
+		"url": "https://www.tcjrealty.in",
+		"logo": "https://www.tcjrealty.in/images/tcj-logo.jpg",
+		"sameAs": [
+		"https://www.facebook.com/share/18zPs5EjkZ/?mibextid=wwXIfr",
+		"https://www.linkedin.com/company/tcjrealty/",
+		"https://www.instagram.com/theblueaddress/",
+		"https://x.com/tcjrealty"
+		],
+		"foundingDate": "2025-05-01"
+	}}
+>
+	<ZoomWrapper client:load>
+        <ProjectPage client:load/>
+	</ZoomWrapper>
+</HomeLayout>

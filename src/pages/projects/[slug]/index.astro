@@ -1,0 +1,21 @@
+---
+import '../../../styles/global.css'
+import HomeLayout from '../../../layouts/HomeLayout.astro';
+import { PROJECTS_DATA } from '../../../data/project-details.js';
+import ProjectDetailsPage from '../../../components/Projects/ProjectDetails/ProjectDetailsPage.jsx';
+
+export async function getStaticPaths() {
+
+  return PROJECTS_DATA.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<HomeLayout title={`${project.projectName} | TCJ Realty`}>
+  {/* Pass the entire project object as a prop to the React parent */}
+  <ProjectDetailsPage client:load project={project} />
+</HomeLayout>

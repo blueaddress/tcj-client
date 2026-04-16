@@ -8,6 +8,7 @@ const developments = [
     location: "Kalyan",
     status: "Ongoing",
     image: "/images/projects/ira.jpg",
+    slug: "tcj-ira"
   },
   {
     id: "project-2",
@@ -15,6 +16,7 @@ const developments = [
     location: "South Mumbai",
     status: "Planning",
     image: "/images/projects/arya.jpg",
+    slug: "tcj-arya"
   },
   {
     id: "project-3",
@@ -22,6 +24,7 @@ const developments = [
     location: "Worli",
     status: "Ongoing",
     image: "/images/projects/vivanta.jpg",
+    slug: "tcj-vivanta"
   },
   {
     id: "project-4",
@@ -29,6 +32,7 @@ const developments = [
     location: "Bandra",
     status: "Completed",
     image: "/images/projects/kings-court.jpg",
+    slug: "kings-court"
   },
 ];
 

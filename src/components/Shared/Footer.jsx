@@ -35,9 +35,9 @@ export default function Footer() {
             <ul className="space-y-4 font-body text-sm text-white/70">
               <li><a href="/" className="hover:text-accent transition-colors">Home</a></li>
               <li><a href="#about-us" className="hover:text-accent transition-colors">About TCJ Realty</a></li>
-              <li><a href="#projects" className="hover:text-accent transition-colors">Current Projects</a></li>
-              <li><a href="#knowledge-center" className="hover:text-accent transition-colors">Knowledge Corner</a></li>
-              <li><a href="#partner" className="hover:text-accent transition-colors">Partner With Us</a></li>
+              <li><a href="/projects" className="hover:text-accent transition-colors">Current Projects</a></li>
+              {/* <li><a href="#knowledge-center" className="hover:text-accent transition-colors">Knowledge Corner</a></li>
+              <li><a href="#partner" className="hover:text-accent transition-colors">Partner With Us</a></li> */}
             </ul>
           </div>
 

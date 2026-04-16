@@ -5,10 +5,10 @@ import Footer from '../Shared/Footer.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projectsData = [
-  { id: 1, title: "Ira", location: "Kalyan", status: "Ongoing", image: "/images/projects/ira.jpg" },
-  { id: 2, title: "The Address", location: "Worli", status: "Ongoing", image: "/images/projects/arya.jpg" },
-  { id: 3, title: "Skyline Vista", location: "Bandra", status: "Completed", image: "/images/projects/vivanta.jpg" },
-  { id: 4, title: "Project Delta", location: "Juhu", status: "Completed", image: "/images/projects/kings-court.jpg" },
+  { id: 1, title: "Ira", location: "Ambernath", status: "Ongoing", image: "/images/projects/ira.jpg", slug: "tcj-ira"},
+  { id: 2, title: "Arya", location: "Ambernath", status: "Ongoing", image: "/images/projects/arya.jpg", slug: "tcj-arya" },
+  { id: 3, title: "Vivanta", location: "Ambernath", status: "Completed", image: "/images/projects/vivanta.jpg",slug: "tcj-vivanta" },
+  { id: 4, title: "King's Court", location: "Ambernath", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court"},
 ];
 
 export default function ProjectPage() {

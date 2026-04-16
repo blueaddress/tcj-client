@@ -16,11 +16,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: "home", path: "#" },
-    { label: "about us", path: "#about-us" },
-    { label: "projects", path: "#projects" },
-    { label: "KNOWLEDGE center", path: "#knowledge" },
-    { label: "PARTNER", path: "#partner" },
+    { label: "HOME", path: "/" },
+    { label: "ABOUT US", path: "#about-us" },
+    { label: "PROJECTS", path: "/projects" },
+    // { label: "KNOWLEDGE center", path: "#knowledge" },
+    // { label: "PARTNER", path: "#partner" },
   ];
 
   const drawer = (
@@ -110,7 +110,7 @@ export default function Header() {
           {/* Right Side */}
           <div className="flex items-center gap-4">
             <a
-              href="#contact"
+              href="/contact-us"
               className={`hidden uppercase lg:block px-6 py-2 text-[10px] tracking-widest font-bold border rounded-full transition-all duration-300
                 ${scrolled
                   ? "border-primary-bg text-primary-bg hover:bg-primary-bg hover:text-white"

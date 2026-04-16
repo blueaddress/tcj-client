@@ -52,7 +52,7 @@ export default function ProjectCard({ project }) {
 
         {/* Animated View Details Link */}
         <a 
-          href={`/projects/${project.id}`} 
+          href={`/projects/${project.slug}`} 
           className="flex items-center gap-3 group/link"
         >
           <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-bg text-white transition-all duration-300 group-hover/link:bg-accent group-hover/link:scale-110">

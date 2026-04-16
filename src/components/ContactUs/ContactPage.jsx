@@ -1,5 +1,5 @@
 import Banner from './Banner.jsx';
-import ContactForm from './contactForm.jsx';
+import ContactForm from './ContactForm.jsx';
 import Footer from '../Shared/Footer.jsx';
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';

@@ -34,7 +34,7 @@ export default function ProjectPage() {
               {filter === tab && (
                 <motion.div 
                   layoutId="activeTab" 
-                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent" 
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent" 
                 />
               )}
             </button>

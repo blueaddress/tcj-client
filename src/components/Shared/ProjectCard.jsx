@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
       className="group relative bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 rounded-sm"
     >
       {/* 1. Image Container with "Ongoing" Badge */}
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-16/10 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
@@ -32,7 +32,7 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* Sophisticated Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-bg/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-primary-bg/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
       </div>
 
       {/* 2. Content Area */}
@@ -48,7 +48,7 @@ export default function ProjectCard({ project }) {
         </h3>
 
         {/* Luxury Divider */}
-        <div className="w-12 h-[1px] bg-slate-200 group-hover:w-24 group-hover:bg-accent transition-all duration-500 mb-8" />
+        <div className="w-12 h-px bg-slate-200 group-hover:w-24 group-hover:bg-accent transition-all duration-500 mb-8" />
 
         {/* Animated View Details Link */}
         <a 

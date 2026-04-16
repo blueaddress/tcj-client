@@ -39,7 +39,7 @@ export default function Banner({title, subtitle}) {
           initial={{ width: 0 }}
           animate={{ width: "80px" }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="h-[1px] bg-accent mx-auto mt-8"
+          className="h-px bg-accent mx-auto mt-8"
         />
       </div>
     </section>

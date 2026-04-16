@@ -25,7 +25,7 @@ const gridCols =
         <h4 className="font-body text-primary-bg text-xs tracking-[0.4em] font-bold uppercase whitespace-nowrap">
           Lifestyle Amenities
         </h4>
-        <div className="h-[1px] w-full bg-slate-100"></div>
+        <div className="h-px w-full bg-slate-100"></div>
       </div>
 
       {/* 2. The Luxury 1px Grid Layout */}

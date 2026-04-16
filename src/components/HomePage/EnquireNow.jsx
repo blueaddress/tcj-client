@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 
-export default function EnquireNow() {
+// Add "projectName" as a prop
+export default function EnquireNow({ projectName = "General Inquiry" }) {
   return (
     <section id="contact" className="py-20 lg:py-32 bg-secondary-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -21,15 +22,19 @@ export default function EnquireNow() {
               </p>
             </div>
             
-            {/* Architectural Accent - Logo watermark */}
+            {/* Architectural Accent */}
             <div className="absolute -bottom-10 -left-10 opacity-5 w-64 h-64 border-4 border-white rounded-full"></div>
           </div>
 
           {/* Right Side: The Form */}
-          <div className="lg:w-1/3 bg-white p-10 lg:p-16">
-            <form action="https://formspree.io/f/your-id" method="POST" className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="lg:w-1/2 bg-white p-10 lg:p-16">
+            <form 
+              action="https://formspree.io/f/xojyjoyq" 
+              method="POST" 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            >
               
-              {/* Name */}
+              {/* Full Name */}
               <div className="space-y-2">
                 <label className="font-body text-[10px] tracking-widest uppercase font-bold text-primary-bg/50">Full Name</label>
                 <input 
@@ -41,19 +46,19 @@ export default function EnquireNow() {
                 />
               </div>
 
-              {/* Phone */}
+              {/* Phone Number */}
               <div className="space-y-2">
                 <label className="font-body text-[10px] tracking-widest uppercase font-bold text-primary-bg/50">Phone Number</label>
                 <input 
                   type="tel" 
                   name="phone"
                   required
-                  placeholder="+91 00000 00000"
+                  placeholder="+91 000000 XXXXX"
                   className="w-full border-b border-slate-200 py-3 font-body text-primary-bg focus:outline-none focus:border-accent transition-colors bg-transparent"
                 />
               </div>
 
-              {/* Email */}
+              {/* Email Address */}
               <div className="space-y-2 md:col-span-2">
                 <label className="font-body text-[10px] tracking-widest uppercase font-bold text-primary-bg/50">Email Address</label>
                 <input 
@@ -65,18 +70,17 @@ export default function EnquireNow() {
                 />
               </div>
 
-              {/* Project Selection */}
+              {/* Locked Project Selection */}
               <div className="space-y-2 md:col-span-2">
-                <label className="font-body text-[10px] tracking-widest uppercase font-bold text-primary-bg/50">Interested In</label>
-                <select 
-                  name="project"
-                  className="w-full border-b border-slate-200 py-3 font-body text-primary-bg focus:outline-none focus:border-accent transition-colors bg-transparent appearance-none cursor-pointer"
-                >
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Project Alpha">Project Alpha</option>
-                  <option value="Project Beta">Project Beta</option>
-                  <option value="Project Gamma">Project Gamma</option>
-                </select>
+                <label className="font-body text-[10px] tracking-widest uppercase font-bold text-accent">Subject of Inquiry</label>
+                <input 
+                  type="text"
+                  name="interested_project"
+                  value={projectName}
+                  readOnly // Prevents user editing
+                  className="w-full border-b border-slate-100 py-3 font-body text-slate-400 bg-transparent cursor-not-allowed italic"
+                />
+                <p className="text-[9px] text-slate-400 font-body">This field is automatically set based on your current view.</p>
               </div>
 
               {/* Message */}

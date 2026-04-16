@@ -5,31 +5,31 @@ const developments = [
   {
     id: "ira-kalyan",
     title: "Ira",
-    location: "Kalyan",
+    location: "Ambernath",
     status: "Ongoing",
     image: "/images/projects/ira.jpg",
     slug: "tcj-ira"
   },
   {
     id: "project-2",
-    title: "The Address",
-    location: "South Mumbai",
-    status: "Planning",
+    title: "Arya",
+    location: "Ambernath",
+    status: "Ongoing",
     image: "/images/projects/arya.jpg",
     slug: "tcj-arya"
   },
   {
     id: "project-3",
-    title: "Skyline Vista",
-    location: "Worli",
+    title: "Vivanta",
+    location: "Ambernath",
     status: "Ongoing",
     image: "/images/projects/vivanta.jpg",
     slug: "tcj-vivanta"
   },
   {
     id: "project-4",
-    title: "The Heritage",
-    location: "Bandra",
+    title: "King's Court",
+    location: "Ambernath",
     status: "Completed",
     image: "/images/projects/kings-court.jpg",
     slug: "kings-court"

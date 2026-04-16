@@ -88,7 +88,7 @@ export default function ProjectDetailsPage({ project }) {
       </section>
 
       {/* 3. Global Footer Form */}
-      <EnquireNow />
+      <EnquireNow projectName={project.projectName}/>
       <Footer/>
     </main>
   );

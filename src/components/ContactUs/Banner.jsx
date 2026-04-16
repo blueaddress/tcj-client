@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Banner() {
+export default function Banner({title, subtitle}) {
   const patternBg = "/images/tcj-banner-placeholder.png";
 
   return (
@@ -23,7 +23,7 @@ export default function Banner() {
           transition={{ duration: 0.8 }}
           className="font-body text-accent text-xs tracking-[0.5em] font-bold uppercase my-6"
         >
-          Reach out to us
+          {title}
         </motion.p>
 
         <motion.h1
@@ -32,7 +32,7 @@ export default function Banner() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-heading text-white text-5xl md:text-7xl leading-tight"
         >
-          <span className="italic font-normal">Contact</span> Us
+          <span className="italic font-normal">{subtitle}</span> 
         </motion.h1>
 
         <motion.div

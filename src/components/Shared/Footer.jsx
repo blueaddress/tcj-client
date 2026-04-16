@@ -47,15 +47,15 @@ export default function Footer() {
             <ul className="space-y-4 font-body text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-accent shrink-0" />
-                <span>Mumbai, Maharashtra, India</span>
+                <span>105, Arya, Jhulelal Chowk, Kalyan (West) - 421301</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-accent shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 9307741303</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-accent shrink-0" />
-                <span>sales@tcjrealty.in</span>
+                <span>contact@tcjrealty.in</span>
               </li>
             </ul>
           </div>

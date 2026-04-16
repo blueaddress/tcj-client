@@ -68,7 +68,7 @@ export default function CurrentDevelopments() {
           >
             <a href="#all-projects" className="group flex items-center gap-4 font-body text-[11px] tracking-widest font-bold uppercase text-primary-bg/60 hover:text-accent transition-colors">
               View All Projects 
-              <span className="w-12 h-[1px] bg-slate-300 group-hover:bg-accent transition-all"></span>
+              <span className="w-12 h-px bg-slate-300 group-hover:bg-accent transition-all"></span>
             </a>
           </motion.div>
         </div>
@@ -76,7 +76,7 @@ export default function CurrentDevelopments() {
         {/* 2x2 Grid */}
         <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
             {developments.map((project) => (
-                <div key={project.id} className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.333%-30px)] max-w-[400px]">
+                <div key={project.id} className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.333%-30px)] max-w-100">
                 <ProjectCard project={project} />
                 </div>
             ))}

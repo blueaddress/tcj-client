@@ -23,10 +23,10 @@ export default function ContactPage() {
             className="lg:col-span-7 space-y-12"
           >
             {/* Map Element */}
-            <div className="relative w-full h-[400px] bg-slate-200 grayscale contrast-125 hover:grayscale-0 transition-all duration-700 rounded-sm shadow-inner overflow-hidden border border-slate-100">
+            <div className="relative w-full h-100 bg-slate-200 grayscale contrast-125 hover:grayscale-0 transition-all duration-700 rounded-sm shadow-inner overflow-hidden border border-slate-100">
               <iframe
                 title="TCJ Realty Office Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120651.92138547466!2d72.8252!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1712678000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.488085681915!2d73.14138177725812!3d19.26112949970048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be79704cfcec683%3A0x2462fb5440384905!2sArya%20by%20TCJ%20Realty!5e0!3m2!1sen!2sin!4v1776323511238!5m2!1sen!2sin"
                 className="absolute inset-0 w-full h-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -38,22 +38,22 @@ export default function ContactPage() {
               <ContactDetail 
                 icon={MapPin} 
                 title="Office Address" 
-                detail="Level 5, Executive Chambers, Mumbai, MH 400001" 
+                detail="105, Arya, Jhulelal Chowk, Kalyan (West) - 421301" 
               />
               <ContactDetail 
                 icon={Phone} 
                 title="Direct Line" 
-                detail="+91 98765 43210" 
+                detail="+91 9307741303" 
               />
               <ContactDetail 
                 icon={Mail} 
                 title="Email Support" 
-                detail="hello@tcjrealty.in" 
+                detail="contact@tcjrealty.in" 
               />
               <ContactDetail 
                 icon={Clock} 
                 title="Operating Hours" 
-                detail="Mon - Sat: 10:00 AM - 7:00 PM" 
+                detail="Mon - Sat: 9:00 AM - 7:00 PM" 
               />
             </div>
           </motion.div>

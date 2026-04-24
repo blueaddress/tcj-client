@@ -50,7 +50,7 @@ export default function AboutUs() {
               </h2>
             </div>
 
-            <div className="w-20 h-[2px] bg-accent"></div>
+            <div className="w-20 h-0.5 bg-accent"></div>
 
             <div className="space-y-4 font-body text-slate-600 leading-relaxed text-lg font-light">
               <p>
@@ -63,7 +63,7 @@ export default function AboutUs() {
 
             <div className="pt-6">
               <a 
-                href="#projects" 
+                href="/projects" 
                 className="inline-block group"
               >
                 <span className="font-body text-primary-bg text-xs tracking-widest font-bold uppercase border-b-2 border-accent pb-2 group-hover:text-accent transition-colors">

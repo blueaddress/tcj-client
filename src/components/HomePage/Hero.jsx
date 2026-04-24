@@ -1,24 +1,44 @@
-import { ArrowDown, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, EffectFade } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-export default function Hero() {
-  const placeholder = "/images/tcj-banner-placeholder.png";
-  
-  // Try to use your real images, but if they are missing, the onError handles it
-  const slides = [
-    { id: 1, image: "/images/hero/banner-1.jpg" },
-    { id: 2, image: "/images/hero/banner-2.jpg" },
-  ];
+const placeholder = "/images/tcj-banner-placeholder.png";
 
+const slides = [
+  {
+    id: 1,
+    desktop: "/images/hero/banner-1-desktop.png",   // 1920×1080
+    wide:    "/images/hero/banner-1-wide.png",       // 1650×637
+    tablet:  "/images/hero/banner-1-tablet.png",     // 1024×900
+    mobile:  "/images/hero/banner-1-mobile.png",     // 750×844
+    alt: "TCJ Realty Luxury Property",
+  },
+  {
+    id: 2,
+    desktop: "/images/hero/banner-2-desktop.png",
+    wide:    "/images/hero/banner-2-wide.png",
+    tablet:  "/images/hero/banner-2-tablet.png",
+    mobile:  "/images/hero/banner-2-mobile.png",
+    alt: "TCJ Realty Luxury Property",
+  },
+];
+
+export default function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-screen overflow-hidden bg-brand-navy mt-18">
-    
+    <section className="relative w-full h-screen overflow-hidden bg-brand-navy mt-26">
+
+      <style>{`
+        .hero-swiper,
+        .hero-swiper .swiper-wrapper,
+        .hero-swiper .swiper-slide {
+          height: 100% !important;
+          width: 100% !important;
+        }
+      `}</style>
+
       <div className="absolute inset-0 w-full h-full z-0">
         <Swiper
           modules={[Autoplay, Navigation, EffectFade]}
@@ -31,50 +51,38 @@ export default function Hero() {
             prevEl: ".hero-prev",
           }}
           loop={true}
-          className="h-full w-full"
+          className="hero-swiper h-full w-full"
         >
           {slides.map((slide) => (
-            <SwiperSlide key={slide.id} className="h-full w-full">
+            <SwiperSlide key={slide.id}>
               <div className="relative h-full w-full">
-                {/* Dark Overlay for Luxury Feel and Text Contrast */}
-                <div className="absolute inset-0 bg-black/10 z-10"></div>
-                
-                <img
-                  src={slide.image}
-                  alt="TCJ Realty Luxury Property"
-                  className="h-full w-full object-cover object-center"
-                  onError={(e) => {
-                    e.currentTarget.onerror = null; 
-                    e.currentTarget.src = placeholder;
-                  }}
-                />
+
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/30 z-10" />
+
+                {/* Responsive image via <picture> */}
+                <picture className="absolute inset-0 h-full w-full">
+                  <source media="(max-width: 640px)"  srcSet={slide.mobile} />
+                  <source media="(max-width: 1024px)" srcSet={slide.tablet} />
+                  <source media="(max-width: 1700px)" srcSet={slide.desktop} />
+                  <img
+                    src={slide.wide}
+                    alt={slide.alt}
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = placeholder;
+                    }}
+                  />
+                </picture>
+
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* 2. Content Layer - Centered exactly in viewport */}
-      {/* <div className="relative z-20 h-full w-full flex flex-col items-center justify-center px-6">
-        <motion.div 
-          className="text-center text-white"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5 }}
-        >
-          <span className="text-xs sm:text-sm tracking-[0.4em] uppercase font-bold text-white/80 mb-6 block">
-            Welcome to TCJ Realty
-          </span>
-          <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl mb-4 leading-tight">
-            Unlock <span className="italic font-light">Exclusive</span> Access
-          </h1>
-          <p className="font-body text-lg sm:text-2xl font-extralight tracking-wide max-w-2xl mx-auto">
-            to Mumbai's Hidden Real Estate Gems
-          </p>
-        </motion.div>
-      </div> */}
-
-      {/* 3. Custom Navigation - Placed at the edges */}
+      {/* Navigation */}
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30 flex justify-between px-4 lg:px-10 pointer-events-none">
         <button className="hero-prev pointer-events-auto p-4 rounded-full border border-white/20 text-white backdrop-blur-sm hover:bg-white hover:text-brand-navy transition-all">
           <ChevronLeft size={24} />
@@ -84,16 +92,6 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* 4. Bottom Scroll Indicator */}
-      {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 text-center">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-white/60 mb-2">Discover More</p>
-        <motion.div 
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <ArrowDown size={20} className="mx-auto text-white/80" />
-        </motion.div>
-      </div> */}
     </section>
   );
 }

@@ -22,6 +22,7 @@ const resolvedOgTitle = ogTitle || title;
 const resolvedOgDescription = ogDescription || description;
 const resolvedOgUrl = ogUrl || canonical;
 const resolvedOgImageAlt = ogImageAlt || resolvedOgTitle;
+import SpeedInsights from "@vercel/speed-insights/astro"
 ---
 <!doctype html>
 <html lang="en">
@@ -67,6 +68,7 @@ const resolvedOgImageAlt = ogImageAlt || resolvedOgTitle;
         )}
     </head>
     <body>
+        <SpeedInsights/>
         <Header client:load/>
         <main class="h-fit">
             <slot />

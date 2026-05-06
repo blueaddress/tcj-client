@@ -74,8 +74,8 @@ export default function ProjectDetailsPage({ project }) {
                   <div className="space-y-3">
                     {project.connectivity.map((item, i) => (
                       <div key={i} className="flex justify-between border-b border-slate-50 pb-2">
-                        <span className="text-[11px] uppercase text-slate-400 font-bold">{item.landmark}</span>
-                        <span className="text-xs font-bold text-primary-bg">{item.distance}</span>
+                        <span className="text-base uppercase text-slate-400 font-bold">{item.landmark}</span>
+                        <span className="text-base font-bold text-primary-bg">{item.distance}</span>
                       </div>
                     ))}
                   </div>
@@ -98,8 +98,8 @@ export default function ProjectDetailsPage({ project }) {
 function FactItem({ label, value }) {
   return (
     <div className="flex justify-between border-b border-white/10 pb-2">
-      <span className="text-[10px] uppercase tracking-widest opacity-50">{label}</span>
-      <span className="text-sm font-bold">{value}</span>
+      <span className="text-base uppercase tracking-widest opacity-50">{label}</span>
+      <span className="text-base font-bold">{value}</span>
     </div>
   );
 }

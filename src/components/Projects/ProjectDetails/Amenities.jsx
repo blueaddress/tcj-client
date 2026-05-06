@@ -22,7 +22,7 @@ const gridCols =
     <div className="w-full space-y-12">
       {/* 1. Elegant Header */}
       <div className="flex items-center gap-6">
-        <h4 className="font-body text-primary-bg text-xs tracking-[0.4em] font-bold uppercase whitespace-nowrap">
+        <h4 className="font-body text-primary-bg text-xl tracking-[0.4em] font-bold uppercase whitespace-nowrap">
           Lifestyle Amenities
         </h4>
         <div className="h-px w-full bg-slate-100"></div>
@@ -60,7 +60,7 @@ const gridCols =
               </div>
               
               {/* Amenity Name */}
-              <span className="font-body text-[10px] sm:text-xs tracking-[0.2em] leading-relaxed uppercase font-bold text-primary-bg/70 group-hover:text-primary-bg transition-colors duration-300">
+              <span className="font-body text-base sm:text-xs tracking-[0.2em] leading-relaxed uppercase font-bold text-primary-bg/70 group-hover:text-primary-bg transition-colors duration-300">
                 {item.name}
               </span>
             </motion.div>

@@ -41,12 +41,12 @@ export default function ProjectDetailsPage({ project }) {
 
               {/* Technical Specifications */}
               <div className="space-y-6">
-                <h4 className="font-body text-primary-bg text-xs tracking-[0.3em] font-bold uppercase">Technical Specs</h4>
+                <h4 className="font-body text-primary-bg text-xl tracking-[0.3em] font-bold uppercase">Technical Specs</h4>
                 <div className="divide-y divide-slate-100 border-t border-slate-100">
                   {Object.entries(project.specifications).map(([key, value]) => (
                     <div key={key} className="py-4 grid grid-cols-3">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-accent">{key}</span>
-                      <span className="col-span-2 text-sm text-slate-600 font-body">{value}</span>
+                      <span className="text-lg font-bold uppercase tracking-widest text-accent">{key}</span>
+                      <span className="col-span-2 text-base text-slate-600 font-body">{value}</span>
                     </div>
                   ))}
                 </div>

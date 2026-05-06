@@ -79,10 +79,10 @@ export default function Hero() {
 
   {/* Navigation */}
   <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30 flex justify-between px-4 lg:px-10 pointer-events-none">
-    <button className="hero-prev pointer-events-auto p-4 rounded-full border border-white/20 text-white backdrop-blur-sm hover:bg-white hover:text-brand-navy transition-all">
+    <button className="hero-prev pointer-events-auto p-2 rounded-full border border-white/20 text-white backdrop-blur-sm hover:bg-white hover:text-brand-navy transition-all">
       <ChevronLeft size={24} />
     </button>
-    <button className="hero-next pointer-events-auto p-4 rounded-full border border-white/20 text-white backdrop-blur-sm hover:bg-white hover:text-brand-navy transition-all">
+    <button className="hero-next pointer-events-auto p-2 rounded-full border border-white/20 text-white backdrop-blur-sm hover:bg-white hover:text-brand-navy transition-all">
       <ChevronRight size={24} />
     </button>
   </div>

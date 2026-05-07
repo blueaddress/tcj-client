@@ -58,7 +58,7 @@ export default function ProjectDetailsPage({ project }) {
               <div className="sticky top-24 space-y-8">
                 {/* Project Status Card */}
                 <div className="bg-primary-bg p-10 text-white rounded-sm">
-                  <h3 className="font-heading text-2xl text-accent mb-6">Quick Overview</h3>
+                  <h3 className="font-heading text-base md:text-2xl text-accent mb-6">Quick Overview</h3>
                   <div className="space-y-4">
                      <FactItem label="Status" value={project.status} />
                      <FactItem label="RERA ID" value={project.reraNumber} />
@@ -68,14 +68,14 @@ export default function ProjectDetailsPage({ project }) {
 
                 {/* Location Box */}
                 <div className="border border-slate-100 p-8 rounded-sm">
-                  <h4 className="font-heading text-xl text-primary-bg mb-4 flex items-center gap-2">
+                  <h4 className="font-heading text-base md:text-2xl text-primary-bg mb-4 flex items-center gap-2">
                     <MapPin size={18} className="text-accent"/> Landmark
                   </h4>
                   <div className="space-y-3">
                     {project.connectivity.map((item, i) => (
                       <div key={i} className="flex justify-between border-b border-slate-50 pb-2">
-                        <span className="text-base uppercase text-slate-400 font-bold">{item.landmark}</span>
-                        <span className="text-base font-bold text-primary-bg">{item.distance}</span>
+                        <span className="text-sm md:text-base uppercase text-slate-400 font-bold">{item.landmark}</span>
+                        <span className="text-sm md:text-base font-bold text-primary-bg">{item.distance}</span>
                       </div>
                     ))}
                   </div>
@@ -98,8 +98,8 @@ export default function ProjectDetailsPage({ project }) {
 function FactItem({ label, value }) {
   return (
     <div className="flex justify-between border-b border-white/10 pb-2">
-      <span className="text-base uppercase tracking-widest opacity-50">{label}</span>
-      <span className="text-base font-bold">{value}</span>
+      <span className="text-sm md:text-base uppercase tracking-widest opacity-50">{label}</span>
+      <span className="text-sm md:text-base font-bold">{value}</span>
     </div>
   );
 }

@@ -60,7 +60,7 @@ const gridCols =
               </div>
               
               {/* Amenity Name */}
-              <span className="font-body text-base sm:text-xs tracking-[0.2em] leading-relaxed uppercase font-bold text-primary-bg/70 group-hover:text-primary-bg transition-colors duration-300">
+              <span className="font-body text-xs sm:text-base tracking-[0.2em] leading-relaxed uppercase font-bold text-primary-bg/70 group-hover:text-primary-bg transition-colors duration-300">
                 {item.name}
               </span>
             </motion.div>

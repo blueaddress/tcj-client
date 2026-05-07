@@ -45,8 +45,8 @@ export default function ProjectDetailsPage({ project }) {
                 <div className="divide-y divide-slate-100 border-t border-slate-100">
                   {Object.entries(project.specifications).map(([key, value]) => (
                     <div key={key} className="py-4 grid grid-cols-3">
-                      <span className="text-lg font-bold uppercase tracking-widest text-accent">{key}</span>
-                      <span className="col-span-2 text-base text-slate-600 font-body">{value}</span>
+                      <span className="text-sm sm:text-lg font-bold uppercase tracking-widest text-accent">{key}</span>
+                      <span className="col-span-2 text-sm sm:text-lg text-slate-600 font-body">{value}</span>
                     </div>
                   ))}
                 </div>

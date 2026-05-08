@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 ---
 
-<HomeLayout title={`${project.projectName} | TCJ Realty`}>
+<HomeLayout title={`${project.projectName} | TCJ Realty`} ogImage={`${project.image}`} description={`${project.overview.description}`}>
   {/* Pass the entire project object as a prop to the React parent */}
   <ProjectDetailsPage client:load project={project} />
 </HomeLayout>

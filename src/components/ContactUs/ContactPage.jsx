@@ -1,6 +1,6 @@
 import Banner from './Banner.jsx';
 import ContactForm from './ContactForm.jsx';
-import Footer from '../Shared/Footer.jsx';
+import Footer from '../../data/Shared/Footer.jsx';
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 

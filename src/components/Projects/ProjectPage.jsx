@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Banner from './Banner.jsx';
-import ProjectCard from "../Shared/ProjectCard.jsx";
-import Footer from '../Shared/Footer.jsx';
+import ProjectCard from "../../data/Shared/ProjectCard.jsx";
+import Footer from '../../data/Shared/Footer.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projectsData = [

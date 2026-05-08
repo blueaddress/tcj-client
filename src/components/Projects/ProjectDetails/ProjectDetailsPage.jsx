@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import EnquireNow from '../../HomePage/EnquireNow'
-import Footer from '../../../data/Shared/Footer.jsx';
+import Footer from '../../Shared/Footer.jsx';
 import { motion } from "framer-motion";
 import { MapPin} from "lucide-react";
 import Amenities from './Amenities';

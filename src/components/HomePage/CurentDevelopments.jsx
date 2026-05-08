@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import ProjectCard from "../../data/Shared/ProjectCard.jsx";
+import ProjectCard from "../Shared/ProjectCard.jsx";
 
 const developments = [
   {

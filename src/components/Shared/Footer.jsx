@@ -1,103 +1,100 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { FaXTwitter, FaInstagram, FaLinkedinIn , FaFacebook} from "react-icons/fa6";
+import { Mail } from 'lucide-react';
+import { useState } from "react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState("");
 
   return (
-    <footer className="bg-primary-bg text-white pt-20 pb-10 overflow-hidden">
+    <footer className="bg-white text-[#1a1a1a] pt-20 pb-10 font-sans border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
-        {/* Top Section: Brand & Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-16 items-start">
           
-          {/* Column 1: Brand Identity */}
+          {/* Column 1: Contact Us */}
           <div className="space-y-6">
-            <img 
-              src="/images/tcj-zoomed-no-bg.png" 
-              alt="TCJ Realty" 
-              className="h-12 w-auto brightness-0 invert" 
-            />
-            <p className="font-body text-sm text-white/60 leading-relaxed max-w-xs">
-              Redefining Mumbai's skyline with exclusive off-market gems and luxury developments curated for the discerning few.
-            </p>
-            <div className="flex gap-4">
-              {/* {[Facebook, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="p-2 border border-white/10 rounded-full hover:bg-accent hover:border-accent transition-all duration-300">
-                  <Icon size={18} />
-                </a>
-              ))} */}
+            <h4 className="text-2xl font-medium">Contact Us</h4>
+            <div className="text-gray-500 space-y-4 leading-relaxed">
+              <p className="max-w-70">
+                105, Arya, Jhulelal Chowk,<br />
+                Kalyan (West) — 421301
+              </p>
+              <div className="space-y-1">
+                <p className="border-b border-dashed border-gray-300 inline-block pb-1">
+                  +91 9307741303
+                </p>
+                <br />
+                <p className="border-b border-dashed border-gray-300 inline-block pb-1">
+                  contact@tcjrealty.in
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="font-heading text-xl text-accent mb-6">Quick Links</h4>
-            <ul className="space-y-4 font-body text-sm text-white/70">
-              <li><a href="/" className="hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#about-us" className="hover:text-accent transition-colors">About TCJ Realty</a></li>
-              <li><a href="/projects" className="hover:text-accent transition-colors">Current Projects</a></li>
-              {/* <li><a href="#knowledge-center" className="hover:text-accent transition-colors">Knowledge Corner</a></li>
-              <li><a href="#partner" className="hover:text-accent transition-colors">Partner With Us</a></li> */}
-            </ul>
-          </div>
+          {/* Column 2: Quick Links & Subscription */}
+          <div className="space-y-28">
+            <div>
+              <h4 className="text-2xl font-medium mb-6">Quick Links</h4>
+              <div className="flex flex-wrap gap-x-6 gap-y-3 text-gray-500">
+                {['Home', 'About', 'Projects', 'Contact'].map((link) => (
+                  <a key={link} href="#" className="hover:text-black transition-colors">{link}</a>
+                ))}
+              </div>
+            </div>
 
-          {/* Column 3: Contact Details */}
-          <div>
-            <h4 className="font-heading text-xl text-accent mb-6">Connect</h4>
-            <ul className="space-y-4 font-body text-sm text-white/70">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-accent shrink-0" />
-                <span>105, Arya, Jhulelal Chowk, Kalyan (West) - 421301</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={18} className="text-accent shrink-0" />
-                <span>+91 9307741303</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="text-accent shrink-0" />
-                <span>contact@tcjrealty.in</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Newsletter/CTA */}
-          <div>
-            <h4 className="font-heading text-xl text-accent mb-6">Stay Updated</h4>
-            <p className="font-body text-xs text-white/50 mb-4 tracking-wider uppercase">Subscribe for exclusive listings</p>
-            <form className="relative">
+            {/* Subscription Box */}
+            <div className="flex w-full max-w-md">
               <input 
                 type="email" 
-                placeholder="Email Address" 
-                className="w-full bg-white/5 border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"
+                placeholder="Email"
+                className="grow border border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-gray-400"
               />
-              <button className="mt-4 w-full bg-accent text-primary-bg font-bold py-3 text-xs tracking-widest uppercase hover:bg-white transition-colors duration-300">
-                Join Now
+              <button className="bg-[#e31e24] text-white px-6 py-3 flex items-center gap-2 font-bold uppercase tracking-wider hover:bg-black transition-colors">
+                <Mail size={18} />
+                SUBSCRIBE
               </button>
-            </form>
-          </div>
-
-        </div>
-
-        {/* Bottom Bar: Disclaimer & Copyright */}
-        <div className="pt-10 border-t border-white/10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-            <div className="space-y-2">
-              <p className="text-[10px] text-white/40 leading-relaxed font-body">
-                Disclaimer: The content on this website is for informational purposes only and does not constitute a legal offering. 
-                Images are for representational purposes. RERA numbers are available upon request.
-              </p>
-              <p className="text-xs text-white/60 font-body">
-                &copy; {currentYear} TCJ Realty. All Rights Reserved.
-              </p>
-            </div>
-            <div className="flex lg:justify-end gap-6 text-[10px] tracking-widest uppercase font-bold text-white/40">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
-              <a href="#" className="hover:text-white transition-colors">RERA Info</a>
             </div>
           </div>
+
+          {/* Column 3: Tagline & Socials */}
+          <div className="flex flex-col items-end text-right">
+            <div className="mb-8">
+              <h2 className="text-6xl xl:text-7xl font-serif leading-none tracking-tight">
+                #liveabove
+              </h2>
+              <h2 className="text-7xl xl:text-8xl font-serif leading-none uppercase italic tracking-tighter">
+                ordinary
+              </h2>
+            </div>
+            
+            <div className="flex gap-4">
+              {[
+                { Icon: FaInstagram, href: "https://www.instagram.com/tcj.realty/" },
+                { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/tcjrealty/" },
+                { Icon: FaXTwitter, href: "https://x.com/tcjrealty" },
+                { Icon: FaFacebook, href: "https://www.facebook.com/share/18zPs5EjkZ/?mibextid=wwXIfr" },
+              ].map((item, i) => (
+                <a key={i} href={item.href} className="w-10 h-10 border border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                  <item.Icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-        
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6">
+          <img 
+            src="/images/tcj-zoomed-no-bg.png" 
+            alt="TCJ Realty" 
+            className="h-14 w-auto grayscale contrast-125" 
+          />
+          <p className="text-sm text-gray-600 font-medium uppercase tracking-widest">
+            TCJ REALTY LLP © {currentYear}
+          </p>
+        </div>
       </div>
     </footer>
   );

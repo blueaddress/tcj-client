@@ -5,7 +5,6 @@ import { PROJECTS_DATA } from '../../../data/project-details.js';
 import ProjectDetailsPage from '../../../components/Projects/ProjectDetails/ProjectDetailsPage.jsx';
 
 export async function getStaticPaths() {
-
   return PROJECTS_DATA.map((project) => ({
     params: { slug: project.slug },
     props: { project },
@@ -13,9 +12,15 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+
+const siteUrl = "https://tcjrealty.in";
+const ogImageUrl = `${siteUrl}${project.image}`;
 ---
 
-<HomeLayout title={`${project.projectName} | TCJ Realty`} ogImage={`${project.image}`} description={`${project.overview.description}`}>
-  {/* Pass the entire project object as a prop to the React parent */}
+<HomeLayout 
+  title={`${project.projectName} | TCJ Realty`}
+  ogImage={ogImageUrl}
+  description={`${project.overview.description}`}
+>
   <ProjectDetailsPage client:load project={project} />
 </HomeLayout>

@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Links + Subscribe */}
-          <div className="space-y-10 sm:space-y-20">
+          <div className="space-y-10 sm:space-y-24">
             <div>
               <h4 className="text-xl md:text-2xl font-medium mb-5">Quick Links</h4>
               <div className="flex flex-wrap gap-x-5 gap-y-3 text-gray-500 text-sm md:text-base">

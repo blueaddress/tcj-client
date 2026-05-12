@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import ProjectCard from "../Shared/ProjectCard.jsx";
 
 const developments = [
   {
@@ -38,56 +37,72 @@ const developments = [
 
 export default function CurrentDevelopments() {
   return (
-    <section id="projects" className="w-full py-20 lg:py-32 bg-secondary-bg">
+    <section id="projects" className="w-full py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
-        {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <motion.h4 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="font-body text-accent text-xs tracking-[0.4em] font-bold uppercase mb-4"
-            >
-              Current Portfolio
-            </motion.h4>
-            <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-              className="font-heading text-primary-bg text-4xl md:text-5xl lg:text-6xl leading-tight"
-            >
-              Our Latest <span className="italic font-normal">Developments</span>
-            </motion.h2>
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="hidden md:block"
+        {/* Large Minimal Heading like in the image */}
+        <div className="text-center mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="font-heading text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-black"
           >
-            <a href="#all-projects" className="group flex items-center gap-4 font-body text-[11px] tracking-widest font-bold uppercase text-primary-bg/60 hover:text-accent transition-colors">
-              View All Projects 
-              <span className="w-12 h-px bg-slate-300 group-hover:bg-accent transition-all"></span>
-            </a>
-          </motion.div>
+            Projects
+          </motion.h2>
         </div>
 
-        {/* 2x2 Grid */}
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
-            {developments.map((project) => (
-                <div key={project.id} className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.333%-30px)] max-w-100">
-                <ProjectCard project={project} />
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+          {developments.map((project, index) => (
+            <motion.a
+              key={project.id}
+              href={`/projects/${project.slug}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group flex flex-col"
+            >
+              {/* Image Container */}
+              <div className="relative aspect-3/4 overflow-hidden bg-gray-100 mb-6">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover grayscale-20 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                />
+                {/* Optional Status Badge */}
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] uppercase tracking-widest font-bold">
+                  {project.status}
                 </div>
-            ))}
-            </div>
+              </div>
 
-        {/* Mobile View All */}
-        <div className="mt-12 md:hidden flex justify-center">
-          <a href="#all-projects" className="font-body text-[10px] tracking-widest font-bold uppercase py-4 px-8 border border-slate-200">
+              {/* Text Content */}
+              <div className="space-y-1">
+                <h3 className="font-body text-xl md:text-2xl text-black font-medium leading-tight group-hover:text-accent transition-colors">
+                  {project.title}
+                </h3>
+                <p className="font-body text-sm md:text-base text-gray-500 tracking-tight">
+                  {project.location}, Mumbai
+                </p>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="mt-24 flex justify-center">
+          <a 
+            href="/projects" 
+            className="group flex items-center gap-6 font-body text-xs tracking-[0.3em] uppercase font-bold text-black"
+          >
             View Full Portfolio
+            <div className="relative w-12 h-px bg-gray-300 overflow-hidden">
+              <div className="absolute inset-0 bg-black translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+            </div>
           </a>
         </div>
+
       </div>
     </section>
   );

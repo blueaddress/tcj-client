@@ -1,108 +1,83 @@
 import { motion } from "framer-motion";
 
 const developments = [
-  {
-    id: "ira-kalyan",
-    title: "Ira",
-    location: "Ambernath",
-    status: "Ongoing",
-    image: "/images/projects/ira.jpg",
-    slug: "tcj-ira"
-  },
-  {
-    id: "project-2",
-    title: "Arya",
-    location: "Ambernath",
-    status: "Ongoing",
-    image: "/images/projects/arya.jpg",
-    slug: "tcj-arya"
-  },
-  {
-    id: "project-3",
-    title: "Vivanta",
-    location: "Ambernath",
-    status: "Ongoing",
-    image: "/images/projects/vivanta.jpg",
-    slug: "tcj-vivanta"
-  },
-  {
-    id: "project-4",
-    title: "King's Court",
-    location: "Ambernath",
-    status: "Completed",
-    image: "/images/projects/kings-court.jpg",
-    slug: "kings-court"
-  },
+  { id: "tcj-ira",        title: "Ira",         location: "Ambernath", status: "Ongoing",   image: "/images/projects/ira.jpg",        slug: "tcj-ira" },
+  { id: "tcj-arya",       title: "Arya",        location: "Ambernath", status: "Ongoing",   image: "/images/projects/arya.jpg",       slug: "tcj-arya" },
+  { id: "tcj-vivanta",    title: "Vivanta",     location: "Ambernath", status: "Ongoing",   image: "/images/projects/vivanta.jpg",    slug: "tcj-vivanta" },
+  { id: "kings-court",    title: "King's Court",location: "Ambernath", status: "Completed", image: "/images/projects/kings-court.jpg",slug: "kings-court" },
 ];
 
 export default function CurrentDevelopments() {
   return (
-    <section id="projects" className="w-full py-20 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        
-        {/* Large Minimal Heading like in the image */}
-        <div className="text-center mb-20">
-          <motion.h2 
+    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+
+        {/* Heading */}
+        <div className="text-center mb-12 md:mb-20">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="font-heading text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-black"
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-black"
           >
             Projects
           </motion.h2>
         </div>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        {/* Grid — 1 col mobile, 2 col tablet, 3 col desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-16">
           {developments.map((project, index) => (
             <motion.a
               key={project.id}
               href={`/projects/${project.slug}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+              viewport={{ once: true, margin: "-40px" }}
               className="group flex flex-col"
             >
-              {/* Image Container */}
-              <div className="relative aspect-3/4 overflow-hidden bg-gray-100 mb-6">
+              {/* Image */}
+              <div className="relative aspect-3/4 overflow-hidden bg-gray-100 mb-4 md:mb-6">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} by TCJ Realty, ${project.location}`}
                   className="w-full h-full object-cover grayscale-20 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="533"
                 />
-                {/* Optional Status Badge */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] uppercase tracking-widest font-bold">
+                <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
                   {project.status}
                 </div>
               </div>
 
-              {/* Text Content */}
+              {/* Text */}
               <div className="space-y-1">
-                <h3 className="font-body text-xl md:text-2xl text-black font-medium leading-tight group-hover:text-accent transition-colors">
+                <h3 className="font-body text-lg md:text-xl lg:text-2xl text-black font-medium leading-tight group-hover:text-accent transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="font-body text-sm md:text-base text-gray-500 tracking-tight">
-                  {project.location}, Mumbai
+                <p className="font-body text-sm text-gray-500 tracking-tight">
+                  {project.location}, Maharashtra
                 </p>
               </div>
             </motion.a>
           ))}
         </div>
 
-        {/* Bottom Navigation */}
-        <div className="mt-24 flex justify-center">
-          <a 
-            href="/projects" 
-            className="group flex items-center gap-6 font-body text-xs tracking-[0.3em] uppercase font-bold text-black"
+        {/* CTA */}
+        <div className="mt-16 md:mt-24 flex justify-center">
+          <a
+            href="/projects"
+            className="group flex items-center gap-5 font-body text-xs tracking-[0.3em] uppercase font-bold text-black"
           >
             View Full Portfolio
-            <div className="relative w-12 h-px bg-gray-300 overflow-hidden">
-              <div className="absolute inset-0 bg-black translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+            <div className="relative w-10 h-px bg-gray-300 overflow-hidden">
+              <div className="absolute inset-0 bg-black translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
             </div>
           </a>
         </div>
-
       </div>
     </section>
   );

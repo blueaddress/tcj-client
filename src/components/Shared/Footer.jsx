@@ -9,7 +9,8 @@ export default function Footer() {
     { label: "Home", href: "/" },
     { label: "About", href: "#about-us" },
     { label: "Projects", href: "/projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Partner", href: "/partner-with-us" },
+    { label: "Contact", href: "/contact-us" },
   ];
 
   const socials = [

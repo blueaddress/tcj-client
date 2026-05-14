@@ -52,10 +52,10 @@ export default function AboutUs() {
           >
             <div className="max-w-md ml-auto space-y-6 font-sans text-sm md:text-base text-gray-300 leading-relaxed font-light">
               <p>
-                Established in 1996, TCJ Realty is one of the most distinguished and admired real estate developers in Kalyan, Ambernath & Badlapur. The company built some of the first residential complexes in Badlapur in the early 2000s setting a benchmark in the micro-market.
+                Established in 1996, TCJ Realty is one of the most distinguished and admired real estate developers in Kalyan, Ambernath & Badlapur.With a robust track record of 7 delivered projects with over 1500 Happy families, it has continuously driven to keep the customer as a focal point in the designing, planning and construction of all its projects.
               </p>
               <p>
-                With a robust track record of 7 delivered projects with over 1500 Happy families, it has continuously driven to keep the customer as a focal point in the designing, planning and construction of all its projects.
+                
               </p>
               
               {/* Styled like the David Chipperfield signature in the image */}

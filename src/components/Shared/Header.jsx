@@ -19,8 +19,8 @@ export default function Header() {
     { label: "HOME", path: "/" },
     { label: "ABOUT US", path: "#about-us" },
     { label: "PROJECTS", path: "/projects" },
+    { label: "PARTNER with us", path: "/partner-with-us" },
     // { label: "KNOWLEDGE center", path: "#knowledge" },
-    // { label: "PARTNER", path: "#partner" },
   ];
 
   const drawer = (

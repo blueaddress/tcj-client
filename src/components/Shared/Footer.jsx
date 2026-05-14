@@ -11,6 +11,7 @@ export default function Footer() {
     { label: "Projects", href: "/projects" },
     { label: "Partner", href: "/partner-with-us" },
     { label: "Contact", href: "/contact-us" },
+    { label: "Career", href: "/careers" },
   ];
 
   const socials = [

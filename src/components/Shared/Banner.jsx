@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 
-export default function Banner() {
-  const patternBg = "/images/tcj-banner-placeholder.png";
+export default function Banner({image, title, tagline}) {
 
   return (
-    <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
       
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${patternBg})` }}
+        style={{ backgroundImage: `url(${image})` }}
       />
 
       {/* Dark overlay for text readability */}
@@ -23,7 +22,7 @@ export default function Banner() {
           transition={{ duration: 0.8 }}
           className="font-body text-accent text-xs tracking-[0.5em] font-bold uppercase my-6"
         >
-          Portfolio
+          {tagline}
         </motion.p>
 
         <motion.h1
@@ -32,7 +31,7 @@ export default function Banner() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-heading text-white text-5xl md:text-7xl leading-tight"
         >
-          Our <span className="italic font-normal">Developments</span>
+          <span className="italic font-normal">{title}</span>
         </motion.h1>
 
         <motion.div

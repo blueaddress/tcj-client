@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Banner from './Banner.jsx';
+import Banner from '../Shared/Banner.jsx';
 import ProjectCard from "../Shared/ProjectCard.jsx";
 import Footer from '../Shared/Footer.jsx';
 import { motion, AnimatePresence } from 'framer-motion';

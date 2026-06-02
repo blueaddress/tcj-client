@@ -41,7 +41,7 @@ export default function Partner() {
                             className="flex flex-col justify-center"
                         >
                             <div className="mb-10">
-                                <h4 className="font-sans text-xs tracking-[0.3em] uppercase text-gray-400 font-bold mb-4">
+                                <h4 className="font-body text-xs tracking-[0.3em] uppercase text-gray-400 font-bold mb-4">
                                     Transforming Spaces
                                 </h4>
                                 <h2 className="font-serif text-5xl md:text-6xl text-black leading-tight tracking-tight mb-6">
@@ -49,7 +49,7 @@ export default function Partner() {
                                 </h2>
                                 <div className="w-16 h-0.5 bg-[#e31e24] mb-8"></div>
                                 
-                                <div className="space-y-5 font-sans text-gray-600 leading-relaxed font-light text-base md:text-lg">
+                                <div className="space-y-5 font-body text-gray-600 leading-relaxed font-light text-base md:text-lg">
                                     <p>
                                         The process of redevelopment involves the reconstruction of an existing Cooperative Housing Society building. It involves the Transfer of Development Rights (TDR) and utilization of the maximum area permissible by Floor Space Index (FSI) regulations.
                                     </p>
@@ -67,10 +67,10 @@ export default function Partner() {
                                             <feature.icon size={20} strokeWidth={1.5} />
                                         </div>
                                         <div>
-                                            <h5 className="font-sans font-semibold text-black tracking-wide text-sm uppercase">
+                                            <h5 className="font-body font-semibold text-black tracking-wide text-sm uppercase">
                                                 {feature.title}
                                             </h5>
-                                            <p className="font-sans text-sm text-gray-500 mt-1 font-light">
+                                            <p className="font-body text-sm text-gray-500 mt-1 font-light">
                                                 {feature.desc}
                                             </p>
                                         </div>

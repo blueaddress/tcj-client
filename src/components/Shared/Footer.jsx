@@ -11,7 +11,7 @@ export default function Footer() {
     { label: "Projects", href: "/projects" },
     { label: "Partner", href: "/partner-with-us" },
     { label: "Contact", href: "/contact-us" },
-    { label: "Career", href: "/careers" },
+    { label: "Careers", href: "/careers" },
   ];
 
   const socials = [
@@ -30,9 +30,9 @@ export default function Footer() {
 
           {/* Column 1: Contact */}
           <div className="space-y-5">
-            <h4 className="text-xl md:text-2xl font-medium">Contact Us</h4>
-            <div className="text-gray-500 space-y-4 leading-relaxed text-sm md:text-base">
-              <p>105, Arya, Jhulelal Chowk,<br />Kalyan (West) — 421301</p>
+            <h4 className="text-xl md:text-2xl font-medium font-heading">Contact Us</h4>
+            <div className="text-gray-500 space-y-4 leading-relaxed text-sm md:text-base font-body">
+              <p>105, Arya, Jhulelal Chowk,<br />Kalyan (West) - 421301</p>
               <div className="space-y-2">
                 <a
                   href="tel:+919307741303"
@@ -51,12 +51,12 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Links + Subscribe */}
-          <div className="space-y-10 sm:space-y-24">
+          <div className="space-y-10 sm:space-y-24 ">
             <div>
-              <h4 className="text-xl md:text-2xl font-medium mb-5">Quick Links</h4>
+              <h4 className="text-xl md:text-2xl font-medium font-heading mb-5">Quick Links</h4>
               <div className="flex flex-wrap gap-x-5 gap-y-3 text-gray-500 text-sm md:text-base">
                 {links.map(({ label, href }) => (
-                  <a key={label} href={href} className="hover:text-black transition-colors">
+                  <a key={label} href={href} className="hover:text-black font-body transition-colors">
                     {label}
                   </a>
                 ))}

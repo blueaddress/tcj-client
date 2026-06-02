@@ -20,7 +20,7 @@ export default function Banner({image, title, tagline}) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-body text-accent text-xs tracking-[0.5em] font-bold uppercase my-6 font-body"
+          className="font-body text-accent text-xs tracking-[0.5em] font-bold uppercase my-6"
         >
           {tagline}
         </motion.p>
@@ -31,7 +31,7 @@ export default function Banner({image, title, tagline}) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-heading text-white text-5xl md:text-7xl leading-tight"
         >
-          <span className="italic font-normal font-heading">{title}</span>
+          <span className="italic font-normal">{title}</span>
         </motion.h1>
 
         <motion.div

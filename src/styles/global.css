@@ -1,13 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
+/* ── Fonts ─────────────────────────────────────────── */
+@font-face {
+  font-family: 'New Paris';
+  src: url('/assets/fonts/new-paris/NewParis.woff2') format('woff2'),
+       url('/assets/fonts/new-paris/NewParis.woff')  format('woff'),
+       url('/assets/fonts/new-paris/NewParis.ttf')   format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-@theme {
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/satoshi/Satoshi-Variable.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/satoshi/Satoshi-VariableItalic.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@theme{
     --color-primary-bg: #003366; /*navy blue logo*/
     --color-secondary-bg: #F9FAFB; /*light background*/
     --color-accent: #C5A059;/*gold luxury accent*/
 
-    --font-heading: "Montserrat", serif;
-    --font-body: "Inter", serif;
+    /* Font families */
+    --font-heading: 'New Paris', Georgia, serif;
+    --font-body:    'Satoshi', system-ui, sans-serif;
 }
 
 body{

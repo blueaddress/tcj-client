@@ -30,7 +30,7 @@ export default function AboutUs() {
             viewport={{ once: true }}
             className="flex flex-col justify-start pt-10"
           >
-            <h2 className="font-serif text-6xl md:text-7xl lg:text-[7rem] uppercase leading-[1.1] tracking-tight">
+            <h2 className="font-heading text-6xl md:text-7xl lg:text-[7rem] uppercase leading-[1.1] tracking-tight">
               LIVE{' '}
               {/* Highlight Box mimicking the screenshot */}
               <span className="relative inline-block">
@@ -50,7 +50,7 @@ export default function AboutUs() {
             viewport={{ once: true }}
             className="flex flex-col justify-end lg:pt-64"
           >
-            <div className="max-w-md ml-auto space-y-6 font-sans text-sm md:text-base text-gray-300 leading-relaxed font-light">
+            <div className="max-w-md font-body ml-auto space-y-6 text-sm md:text-base text-gray-300 leading-relaxed font-light">
               <p>
                 Established in 1996, TCJ Realty is one of the most distinguished and admired real estate developers in Kalyan, Ambernath & Badlapur.With a robust track record of 7 delivered projects with over 1500 Happy families, it has continuously driven to keep the customer as a focal point in the designing, planning and construction of all its projects.
               </p>
@@ -59,14 +59,14 @@ export default function AboutUs() {
               </p>
               
               {/* Styled like the David Chipperfield signature in the image */}
-              <p className="pt-2 text-white font-normal">
+              <p className="pt-2 font-body text-white font-normal">
                 — TCJ Realty
               </p>
 
               <div className="pt-6">
                 <a 
                   href="/projects" 
-                  className="inline-block group font-sans text-xs tracking-[0.2em] font-bold uppercase text-white hover:text-accent transition-colors"
+                  className="inline-block group font-body text-xs tracking-[0.2em] font-bold uppercase text-white hover:text-accent transition-colors"
                 >
                   Explore Our Projects &rarr;
                 </a>

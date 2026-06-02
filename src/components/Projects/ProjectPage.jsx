@@ -5,21 +5,22 @@ import Footer from '../Shared/Footer.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projectsData = [
-  { id: 1, title: "Ira", location: "Ambernath", status: "Ongoing", image: "/images/projects/ira.jpg", slug: "tcj-ira" },
-  { id: 2, title: "Arya", location: "Ambernath", status: "Ongoing", image: "/images/projects/arya.jpg", slug: "tcj-arya" },
-  { id: 3, title: "Vivanta", location: "Ambernath", status: "Ongoing", image: "/images/projects/vivanta.jpg", slug: "tcj-vivanta" },
+  { id: 1, title: "Ira",          location: "Ambernath", status: "Ongoing",   image: "/images/projects/ira.jpg",         slug: "tcj-ira" },
+  { id: 2, title: "Arya",         location: "Ambernath", status: "Ongoing",   image: "/images/projects/arya.jpg",        slug: "tcj-arya" },
+  { id: 3, title: "Vivanta",      location: "Ambernath", status: "Ongoing",   image: "/images/projects/vivanta.jpg",     slug: "tcj-vivanta" },
   { id: 4, title: "King's Court", location: "Ambernath", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court" },
 ];
 
 export default function ProjectPage() {
   const [filter, setFilter] = useState('Ongoing');
   const filteredProjects = projectsData.filter(p => p.status === filter);
+  const PLACEHOLDER = "/images/tcj-banner-placeholder.png";
 
   return (
     <main className="bg-secondary-bg min-h-screen">
-      <Banner />
+      <Banner title="Projects" image={PLACEHOLDER}/>
 
-      {/* Filter Tabs */}
+      {/* ── Filter Tabs ──────────────────────────────────────────────────── */}
       <section className="py-12 flex justify-center border-b border-slate-200 bg-white">
         <div className="flex gap-12">
           {['Ongoing', 'Completed'].map((tab) => (
@@ -41,23 +42,24 @@ export default function ProjectPage() {
         </div>
       </section>
 
-      {/* Projects Grid */}
+      {/* ── Projects Grid ────────────────────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-6 lg:px-12">
         <AnimatePresence mode="popLayout">
           <motion.div
             layout
-            className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-10"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-16"
           >
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.4 }}
               >
-                <ProjectCard project={project} />
+                {/* index passed so ProjectCard can stagger its own entrance */}
+                <ProjectCard project={project} index={index} />
               </motion.div>
             ))}
           </motion.div>

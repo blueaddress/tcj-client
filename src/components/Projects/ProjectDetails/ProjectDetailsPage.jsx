@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '../../Shared/Banner.jsx';
+import Banner from './Banner.jsx';
 import EnquireNow from '../../HomePage/EnquireNow'
 import Footer from '../../Shared/Footer.jsx';
 import { motion } from "framer-motion";

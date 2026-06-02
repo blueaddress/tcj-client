@@ -48,7 +48,7 @@ export default function CurrentDevelopments() {
                   width="400"
                   height="533"
                 />
-                <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
+                <div className="absolute font-body top-3 left-3 md:top-4 md:left-4 bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
                   {project.status}
                 </div>
               </div>

@@ -45,7 +45,7 @@ export default function Stats() {
                     <span>—</span>
                   )}
                   {stat.suffix && (
-                    <span className="text-3xl sm:text-4xl md:text-5xl align-top ml-1 font-sans not-italic text-black/30">
+                    <span className="text-3xl font-body sm:text-4xl md:text-5xl align-top ml-1 not-italic text-black/30">
                       {stat.suffix}
                     </span>
                   )}

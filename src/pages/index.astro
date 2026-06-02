@@ -5,6 +5,7 @@ import ZoomWrapper from '../components/Shared/ZoomWrapper.jsx';
 import Hero from '../components/HomePage/Hero.jsx';
 import About from '../components/HomePage/About.jsx';
 import CurrentDevelopments from '../components/HomePage/CurentDevelopments.jsx';
+import PortFolioGallery from '../components/HomePage/PortFolioGallery';
 import Stats from '../components/HomePage/Stats.jsx';
 import EnquireNow from "../components/HomePage/EnquireNow.jsx";
 import Footer from "../components/Shared/Footer.jsx";
@@ -31,6 +32,7 @@ import Footer from "../components/Shared/Footer.jsx";
 	<ZoomWrapper client:load>
 		<Hero client:load/>
 		<About client:visible/>
+		<PortFolioGallery client:visible />
 		<CurrentDevelopments client:visible/>
 		<Stats client:visible/>
 		<EnquireNow client:visible/>

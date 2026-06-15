@@ -4,6 +4,13 @@ import { useState } from "react";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubscribe = () => {
+    if (!email || !email.includes("@")) return;
+    // TODO: wire up your actual API call here
+    setSubmitted(true);
+    setEmail("");
+};
 
   const links = [
     { label: "Home", href: "/" },
@@ -54,7 +61,7 @@ export default function Footer() {
           <div className="space-y-10 sm:space-y-24 ">
             <div>
               <h4 className="text-xl md:text-2xl font-medium font-heading mb-5">Quick Links</h4>
-              <div className="flex flex-wrap gap-x-5 gap-y-3 text-gray-500 text-sm md:text-base">
+              <div className="grid grid-cols-2 gap-x-2 gap-y-3 text-gray-500 text-sm md:text-base">
                 {links.map(({ label, href }) => (
                   <a key={label} href={href} className="hover:text-black font-body transition-colors">
                     {label}
@@ -64,30 +71,40 @@ export default function Footer() {
             </div>
 
             {/* Subscribe — full width on mobile */}
-            <div className="flex w-full">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                className="min-w-0 flex-1 border border-gray-300 px-3 md:px-4 py-2.5 md:py-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
-              />
-              <button
-                onClick={() => setEmail("")}
-                className="bg-[#e31e24] text-white px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-black transition-colors whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </div>
+            {submitted ? (
+              <div className="flex items-center gap-3 border border-gray-200 px-4 py-3 w-full">
+                <span className="text-[#e31e24] text-lg">✓</span>
+                <p className="font-body text-sm text-gray-600">
+                  You're on the list. We'll be in touch.
+                </p>
+              </div>
+            ) : (
+              <div className="flex w-full">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
+                  placeholder="Email"
+                  className="min-w-0 flex-1 border border-gray-300 px-3 md:px-4 py-2.5 md:py-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+                />
+                <button
+                  onClick={handleSubscribe}
+                  className="bg-[#e31e24] text-white px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-black transition-colors whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Column 3: Tagline + Socials — left-aligned on mobile, right on desktop */}
           <div className="flex flex-col sm:col-span-2 lg:col-span-1 lg:items-end lg:text-right">
             <div className="mb-6 md:mb-8">
-              <h2 className="font-heading text-5xl md:text-6xl xl:text-7xl leading-none tracking-tight">
+              <h2 className="font-heading text-4xl md:text-5xl xl:text-6xl leading-none tracking-tight">
                 #liveabove
               </h2>
-              <h2 className="font-heading text-6xl md:text-7xl xl:text-8xl leading-none uppercase italic tracking-tighter">
+              <h2 className="font-heading text-5xl md:text-6xl xl:text-7xl leading-none uppercase italic tracking-tighter">
                 ordinary
               </h2>
             </div>
@@ -114,13 +131,13 @@ export default function Footer() {
           <img
             src="/images/tcj-zoomed-no-bg.png"
             alt="TCJ Realty"
-            className="h-10 md:h-14 w-auto grayscale contrast-125"
+            className="h-10 md:h-14 w-auto grayscale contrast-125 hover:grayscale-0 hover:contrast-100 transition-all duration-500 cursor-pointer"
             loading="lazy"
             width="120"
             height="56"
           />
           <p className="text-xs md:text-sm text-gray-600 font-medium uppercase tracking-widest">
-            TCJ Realty LLP © {currentYear}
+            TCJ Realty © {currentYear}
           </p>
         </div>
       </div>

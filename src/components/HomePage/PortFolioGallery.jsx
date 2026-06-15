@@ -9,10 +9,10 @@ import { Pagination, A11y } from 'swiper/modules';
 const FALLBACK = "/images/tcj-banner-placeholder.png";
 
 const developments = [
-  { id: "tcj-ira",     year: "2024", title: "Ira",          location: "Ambernath", status: "Ongoing",   image: "/images/projects/ira.jpg",         slug: "tcj-ira" },
-  { id: "tcj-arya",    year: "2025", title: "Arya",         location: "Ambernath", status: "Ongoing",   image: "/images/projects/arya.jpg",        slug: "tcj-arya" },
-  { id: "tcj-vivanta", year: "2026", title: "Vivanta",      location: "Ambernath", status: "Ongoing",   image: "/images/projects/vivanta.jpg",     slug: "tcj-vivanta" },
-  { id: "kings-court", year: "2027", title: "King's Court", location: "Ambernath", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court" },
+  { id: "kings-court", year: "2018", title: "King's Court", location: "Kalyan West", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court" },
+  { id: "tcj-arya",    year: "2026", title: "Arya",         location: "Kalyan West", status: "Ongoing",   image: "/images/projects/arya.jpg",        slug: "tcj-arya" },
+  { id: "tcj-ira",     year: "2026", title: "Ira",          location: "Kalyan West", status: "Ongoing",   image: "/images/projects/ira.jpg",         slug: "tcj-ira" },
+  { id: "tcj-vivanta", year: "2026", title: "Vivanta",      location: "Ambernath West", status: "Ongoing",   image: "/images/projects/vivanta.jpg",     slug: "tcj-vivanta" },
 ];
 
 function ProjectImage({ src, alt }) {
@@ -21,8 +21,10 @@ function ProjectImage({ src, alt }) {
     <img
       src={imgSrc}
       alt={alt}
-      className="w-full h-full object-cover"
+      className="w-full h-full object-cover object-center"
       onError={() => setImgSrc(FALLBACK)}
+      loading="lazy"
+      decoding="async"
     />
   );
 }
@@ -38,8 +40,8 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded }) {
       onMouseLeave={onLeave}
       // On desktop: flex width animates. On mobile (alwaysExpanded): full height fixed panel.
       style={!alwaysExpanded ? {
-        flex: expanded ? '3 1 0%' : '1 1 0%',
-        minWidth: expanded ? '320px' : '80px',
+        flex: expanded ? '1.5 1 0%' : '1 1 0%',
+        minWidth: expanded ? '250px' : '80px',
       } : undefined}
       className={[
         'relative flex flex-col no-underline overflow-hidden bg-white',
@@ -60,18 +62,20 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded }) {
       </div>
 
       {/* Image — always visible on mobile, fades in on desktop hover */}
-      <div
-        className={[
-          'mx-3 my-3 flex-1 overflow-hidden bg-gray-100',
-          !alwaysExpanded && 'transition-opacity duration-500',
-          !alwaysExpanded && (expanded ? 'opacity-100' : 'opacity-0'),
-        ].filter(Boolean).join(' ')}
-      >
-        <ProjectImage
-          src={project.image}
-          alt={`${project.title}, ${project.location}`}
-        />
-      </div>
+<div
+  className={[
+    'mx-3 my-3 flex justify-center overflow-hidden',
+    !alwaysExpanded && 'transition-opacity duration-500',
+    !alwaysExpanded && (expanded ? 'opacity-100' : 'opacity-0'),
+  ].filter(Boolean).join(' ')}
+>
+  <div className="h-85 w-fit overflow-hidden bg-gray-100 shrink-0">
+    <ProjectImage
+      src={project.image}
+      alt={`${project.title}, ${project.location}`}
+    />
+  </div>
+</div>
 
       {/* Bottom text */}
       <div className="px-4 pb-5 shrink-0">
@@ -158,7 +162,7 @@ export default function PortfolioGallery() {
       </div>
 
       {/* ── Desktop: Accordion (md+) ─────────────────────────────────────── */}
-      <div className="hidden md:flex h-[600px] w-full border border-gray-200 overflow-hidden">
+      <div className="hidden md:flex h-150 w-full border border-gray-200 overflow-hidden">
         {developments.map((project) => (
           <Panel
             key={project.id}

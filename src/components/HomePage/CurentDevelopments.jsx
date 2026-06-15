@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const developments = [
-  { id: "tcj-ira",        title: "Ira",         location: "Ambernath", status: "Ongoing",   image: "/images/projects/ira.jpg",        slug: "tcj-ira" },
-  { id: "tcj-arya",       title: "Arya",        location: "Ambernath", status: "Ongoing",   image: "/images/projects/arya.jpg",       slug: "tcj-arya" },
-  { id: "tcj-vivanta",    title: "Vivanta",     location: "Ambernath", status: "Ongoing",   image: "/images/projects/vivanta.jpg",    slug: "tcj-vivanta" },
-  { id: "kings-court",    title: "King's Court",location: "Ambernath", status: "Completed", image: "/images/projects/kings-court.jpg",slug: "kings-court" },
+  // { id: "kings-court", year: "2018", title: "King's Court", location: "Kalyan West", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court" },
+  { id: "tcj-arya",    year: "2026", title: "Arya",         location: "Kalyan West", status: "Ongoing",   image: "/images/projects/arya.jpg",        slug: "tcj-arya" },
+  { id: "tcj-ira",     year: "2026", title: "Ira",          location: "Kalyan West", status: "Ongoing",   image: "/images/projects/ira.jpg",         slug: "tcj-ira" },
+  { id: "tcj-vivanta", year: "2026", title: "Vivanta",      location: "Ambernath West", status: "Ongoing",   image: "/images/projects/vivanta.jpg",     slug: "tcj-vivanta" },
 ];
 
 export default function CurrentDevelopments() {

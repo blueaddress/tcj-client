@@ -3,7 +3,7 @@ import PartnerForm from './PartnerForm.jsx';
 import Footer from '../Shared/Footer';
 import { motion } from "framer-motion";
 import { Building, FileCheck2, Clock } from "lucide-react";
-
+import partner from '../../assets/images/partner/partnerwithus.png';
 export default function Partner() {
     const features = [
         {
@@ -25,7 +25,7 @@ export default function Partner() {
 
     return (
         <main className="bg-secondary-bg min-h-screen">
-            <Banner title="Partner With Us" subtitle="Redevelopment" />
+            <Banner title="Partner With Us" subtitle="Redevelopment" image={partner.src}/>
             
             <section id="redevelopment" className="py-24 lg:py-32 bg-[#fafafa] text-[#1a1a1a] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">

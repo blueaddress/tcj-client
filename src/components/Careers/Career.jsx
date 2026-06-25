@@ -2,6 +2,7 @@ import Banner from "../Shared/Banner";
 import CareerForm from "./CareerForm"; // Adjust import path as needed
 import { motion } from "framer-motion";
 import { Briefcase, TrendingUp, Users } from "lucide-react";
+import careerImg from "../../assets/images/careers/career.png";
 
 export default function Career() {
     const perks = [
@@ -24,7 +25,7 @@ export default function Career() {
 
     return (
         <main className="bg-secondary-bg min-h-screen">
-            <Banner title="Careers" subtitle="Build your Career" />
+            <Banner title="Careers" subtitle="Build your Career" image={careerImg.src}/>
             
             <section id="career-details" className="py-24 lg:py-32 bg-[#fafafa] text-[#1a1a1a] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">

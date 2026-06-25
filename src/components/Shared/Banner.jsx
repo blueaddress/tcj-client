@@ -3,16 +3,15 @@ import { motion } from "framer-motion";
 export default function Banner({image, title, tagline}) {
 
   return (
-    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[53vh] flex items-center justify-center overflow-hidden">
       
-      {/* Background Image */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-position-[center_top] bg-no-repeat"
         style={{ backgroundImage: `url(${image})` }}
       />
 
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 z-10 bg-black/50" />
+      {/* stronger overlay */}
+      <div className="absolute inset-0 z-10 bg-black/60" />
 
       {/* Content Layer */}
       <div className="relative z-20 text-center px-6">
@@ -20,7 +19,7 @@ export default function Banner({image, title, tagline}) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-body text-accent text-xs tracking-[0.5em] font-bold uppercase my-6 font-body"
+          className="font-body text-accent text-xs tracking-[0.5em] font-bold uppercase my-6"
         >
           {tagline}
         </motion.p>

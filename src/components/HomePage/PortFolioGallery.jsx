@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y } from 'swiper/modules';
-
-// Add to your entry file (main.jsx / index.js):
-// import 'swiper/css';
-// import 'swiper/css/pagination';
+import arya from '../../assets/images/projects/arya.webp';
+import ira from '../../assets/images/projects/ira.webp';
+import vivanta from '../../assets/images/projects/vivanta.webp';
+import kingscourt from '../../assets/images/projects/kings-court.webp';
 
 const FALLBACK = "/images/tcj-banner-placeholder.png";
 
 const developments = [
-  { id: "kings-court", year: "2018", title: "King's Court", location: "Kalyan West", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court" },
-  { id: "tcj-arya",    year: "2026", title: "Arya",         location: "Kalyan West", status: "Ongoing",   image: "/images/projects/arya.jpg",        slug: "tcj-arya" },
-  { id: "tcj-ira",     year: "2026", title: "Ira",          location: "Kalyan West", status: "Ongoing",   image: "/images/projects/ira.jpg",         slug: "tcj-ira" },
-  { id: "tcj-vivanta", year: "2026", title: "Vivanta",      location: "Ambernath West", status: "Ongoing",   image: "/images/projects/vivanta.jpg",     slug: "tcj-vivanta" },
+  { id: "kings-court", year: "2018", title: "King's Court", location: "Kalyan West", status: "Completed", image: kingscourt.src , slug: "kings-court" },
+  { id: "tcj-arya",    year: "2026", title: "Arya",         location: "Kalyan West", status: "Ongoing",   image: arya.src ,        slug: "tcj-arya" },
+  { id: "tcj-ira",     year: "2026", title: "Ira",          location: "Kalyan West", status: "Ongoing",   image: ira.src,         slug: "tcj-ira" },
+  { id: "tcj-vivanta", year: "2026", title: "Vivanta",      location: "Ambernath West", status: "Ongoing",   image: vivanta.src ,     slug: "tcj-vivanta" },
 ];
 
 function ProjectImage({ src, alt }) {

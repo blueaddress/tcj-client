@@ -6,26 +6,29 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
+const imageModules = import.meta.glob('../../assets/images/hero/*.webp', { eager: true });
+const bannerImg = (path) => imageModules[`../../assets/images/hero/${path}`]?.default?.src;
+
 const placeholder = "/images/tcj-banner-placeholder.png";
 
 const slides = [
   {
     id: 1,
-    desktop: "/images/hero/banner-1-desktop.png",
-    wide:    "/images/hero/banner-1-wide.png",
-    tablet:  "/images/hero/banner-1-tablet.png",
+    desktop: bannerImg('banner-1-desktop.webp'),
+    wide:    bannerImg('banner-1-wide.webp'),
+    tablet:  bannerImg('banner-1-tablet.webp'),
     alt: "TCJ Realty Luxury Property",
   },
   {
     id: 2,
-    desktop: "/images/hero/banner-2-desktop.png",
-    wide:    "/images/hero/banner-2-wide.png",
-    tablet:  "/images/hero/banner-2-tablet.png",
+    desktop: bannerImg('banner-2-desktop.webp'),
+    wide:    bannerImg('banner-2-wide.webp'),
+    tablet:  bannerImg('banner-2-tablet.webp'),
     alt: "TCJ Realty Luxury Property",
   },
 ];
 
-const MOBILE_VIDEO     = "/images/hero/banner-1-mobile.webm";
+const MOBILE_VIDEO     = "/images/hero/output-compressed.webm";
 const MOBILE_POSTER    = "/images/hero/banner-1-mobile.png";
 
 function MobileHero() {
@@ -45,15 +48,17 @@ function MobileHero() {
 
       <video
         ref={videoRef}
-        src={MOBILE_VIDEO}
-        poster={MOBILE_POSTER}
         autoPlay
         muted
         loop
         playsInline
-        preload="none"
+        preload="metadata"        
+        poster={MOBILE_POSTER}
         className="w-full h-auto block"
-      />
+      >
+        <source src="/images/hero/output-compressed.webm" type="video/webm" />
+        <source src="/images/hero/banner-1-mobile-compressed.mp4"  type="video/mp4" />
+      </video>
 
       {/* Pause / Play */}
       <button
@@ -124,7 +129,7 @@ function DesktopHero() {
 }
 
 export default function Hero() {
-  // useMediaQuery so only the correct tree renders — no hidden elements
+
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 640px)').matches;
 
   return isMobile ? <MobileHero /> : <DesktopHero />;

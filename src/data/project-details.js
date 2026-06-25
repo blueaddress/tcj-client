@@ -1,3 +1,8 @@
+import arya from '../assets/images/projects/arya.webp';
+import ira from '../assets/images/projects/ira.webp';
+import vivanta from '../assets/images/projects/vivanta.webp';
+import kingscourt from '../assets/images/projects/kings-court.webp';
+
 export const PROJECTS_DATA = [
   {
     id: 1,
@@ -7,7 +12,7 @@ export const PROJECTS_DATA = [
     tagline: "Where Luxury Meets Legacy",
     reraNumber: "P51700047140",
     status: "Ready to Move (OC Received)",
-    image: "/images/projects/vivanta.jpg",
+    image: vivanta.src ,
     location: {
       address: "Thakurpada Road, Javsai Gaon, Ambernath (W), Maharashtra 421501",
       neighborhood: "Ambernath West",
@@ -62,7 +67,7 @@ export const PROJECTS_DATA = [
     tagline: "Elegant Living Redefined",
     reraNumber: "P51700029352",
     status: "Ready to Move",
-    image: "/images/projects/arya.jpg",
+    image: arya.src,
     location: {
       address: "Near Podar International School, Ambernath (W), Maharashtra 421501",
       neighborhood: "Ambernath West"
@@ -107,7 +112,7 @@ export const PROJECTS_DATA = [
     tagline: "Luxury Beyond Boundaries",
     reraNumber: "P51700051187",
     status: "Ongoing",
-    image: "/images/projects/ira.jpg",
+    image: ira.src ,
     location: {
       address: "Opposite Balajee Hospital, Ambernath West, Maharashtra 421501",
       neighborhood: "Ambernath West"
@@ -152,7 +157,7 @@ export const PROJECTS_DATA = [
     tagline: "Live Like Royalty",
     reraNumber: "P51700020120",
     status: "Completed / Ready to Move",
-    image: "/images/projects/kings-court.jpg",
+    image: kingscourt.src ,
     location: {
       address: "Khojgaon, Ambernath West, Maharashtra 421501",
       neighborhood: "Ambernath West"

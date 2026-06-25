@@ -4,11 +4,16 @@ import ProjectCard from "../Shared/ProjectCard.jsx";
 import Footer from '../Shared/Footer.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import arya from '../../assets/images/projects/arya.webp';
+import ira from '../../assets/images/projects/ira.webp';
+import vivanta from '../../assets/images/projects/vivanta.webp';
+import kingscourt from '../../assets/images/projects/kings-court.webp';
+
 const projectsData = [
-  { id: 1, title: "Ira",          location: "Ambernath", status: "Ongoing",   image: "/images/projects/ira.jpg",         slug: "tcj-ira" },
-  { id: 2, title: "Arya",         location: "Ambernath", status: "Ongoing",   image: "/images/projects/arya.jpg",        slug: "tcj-arya" },
-  { id: 3, title: "Vivanta",      location: "Ambernath", status: "Ongoing",   image: "/images/projects/vivanta.jpg",     slug: "tcj-vivanta" },
-  { id: 4, title: "King's Court", location: "Ambernath", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court" },
+  { id: 1, title: "Ira",          location: "Ambernath", status: "Ongoing",   image: ira.src ,         slug: "tcj-ira" },
+  { id: 2, title: "Arya",         location: "Ambernath", status: "Ongoing",   image: arya.src ,        slug: "tcj-arya" },
+  { id: 3, title: "Vivanta",      location: "Ambernath", status: "Ongoing",   image: vivanta.src ,     slug: "tcj-vivanta" },
+  { id: 4, title: "King's Court", location: "Ambernath", status: "Completed", image: kingscourt.src , slug: "kings-court" },
 ];
 
 export default function ProjectPage() {

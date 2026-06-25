@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 // Importing the image directly for Vite/Astro to process it
-import aboutImg from "../../assets/images/about/about.jpg";
+import aboutImg from "../../assets/images/about/about.webp";
 
 export default function AboutUs() {
   return (

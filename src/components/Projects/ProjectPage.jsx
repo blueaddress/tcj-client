@@ -8,6 +8,7 @@ import arya from '../../assets/images/projects/arya.webp';
 import ira from '../../assets/images/projects/ira.webp';
 import vivanta from '../../assets/images/projects/vivanta.webp';
 import kingscourt from '../../assets/images/projects/kings-court.webp';
+import projectImg from '../../assets/images/projects/project-banner.png';
 
 const projectsData = [
   { id: 1, title: "Ira",          location: "Ambernath", status: "Ongoing",   image: ira.src ,         slug: "tcj-ira" },
@@ -23,7 +24,7 @@ export default function ProjectPage() {
 
   return (
     <main className="bg-secondary-bg min-h-screen">
-      <Banner title="Projects" image={PLACEHOLDER}/>
+      <Banner title="Projects" image={projectImg.src}/>
 
       {/* ── Filter Tabs ──────────────────────────────────────────────────── */}
       <section className="py-12 flex justify-center border-b border-slate-200 bg-white">

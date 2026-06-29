@@ -50,7 +50,7 @@ export default function AboutUs() {
             viewport={{ once: true }}
             className="flex flex-col justify-end lg:pt-64"
           >
-            <div className="max-w-md font-body ml-auto space-y-6 text-sm md:text-xl text-gray-300 leading-relaxed font-light">
+            <div className="max-w-md font-body ml-auto space-y-6 text-lg md:text-2xl text-gray-300 leading-relaxed font-light">
               <p>
                 Established in 1996, TCJ Realty is one of the most distinguished and admired real estate developers in Kalyan, Ambernath & Badlapur.With a robust track record of 7 delivered projects with over 1500 Happy families, it has continuously driven to keep the customer as a focal point in the designing, planning and construction of all its projects.
               </p>
@@ -66,7 +66,7 @@ export default function AboutUs() {
               <div className="pt-6">
                 <a 
                   href="/projects" 
-                  className="inline-block group font-body text-xs tracking-[0.2em] font-bold uppercase text-white hover:text-accent transition-colors"
+                  className="inline-block group font-body text-sm tracking-[0.2em] font-bold uppercase text-white hover:text-accent transition-colors"
                 >
                   Explore Our Projects &rarr;
                 </a>

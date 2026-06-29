@@ -69,7 +69,7 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded }) {
     !alwaysExpanded && (expanded ? 'opacity-100' : 'opacity-0'),
   ].filter(Boolean).join(' ')}
 >
-  <div className="h-85 w-fit overflow-hidden bg-gray-100 shrink-0">
+  <div className="h-70 w-fit overflow-hidden bg-gray-100 shrink-0">
     <ProjectImage
       src={project.image}
       alt={`${project.title}, ${project.location}`}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y } from 'swiper/modules';
 import arya from '../../assets/images/projects/arya.webp';
-import ira from '../../assets/images/projects/ira.webp';
+import ira from '../../assets/images/projects/ira2.webp';
 import vivanta from '../../assets/images/projects/vivanta.webp';
 import kingscourt from '../../assets/images/projects/kings-court.webp';
 
@@ -30,7 +30,7 @@ function ProjectImage({ src, alt, fit = 'cover' }) {
 }
 
 /* ─── Single panel — shared by both mobile (Swiper slide) and desktop (accordion) ── */
-function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded , fit = 'cover'}) {
+function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded, fit = 'cover', compact = false }) {
   const expanded = alwaysExpanded || isActive;
 
   return (
@@ -38,7 +38,6 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded , fit = 'co
       href={`/projects/${project.slug}`}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      // On desktop: flex width animates. On mobile (alwaysExpanded): full height fixed panel.
       style={!alwaysExpanded ? {
         flex: expanded ? '1.5 1 0%' : '1 1 0%',
         minWidth: expanded ? '250px' : '80px',
@@ -49,10 +48,10 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded , fit = 'co
         alwaysExpanded && 'h-full',
       ].filter(Boolean).join(' ')}
     >
-      {/* Vertical year */}
-      <div className="pt-8 flex justify-center shrink-0">
+      {/* Vertical year — shrink on compact */}
+      <div className={`${compact ? 'pt-3' : 'pt-8'} flex justify-center shrink-0`}>
         <span
-          className={`font-heading text-5xl select-none transition-colors duration-300 ${
+          className={`font-heading ${compact ? 'text-3xl' : 'text-5xl'} select-none transition-colors duration-300 ${
             expanded ? 'text-black' : 'text-gray-300'
           }`}
           style={{ writingMode: 'vertical-lr', textOrientation: 'mixed' }}
@@ -61,37 +60,37 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded , fit = 'co
         </span>
       </div>
 
-      {/* Image — always visible on mobile, fades in on desktop hover */}
-<div
-  className={[
-    'mx-3 my-3 flex justify-center overflow-hidden',
-    !alwaysExpanded && 'transition-opacity duration-500',
-    !alwaysExpanded && (expanded ? 'opacity-100' : 'opacity-0'),
-  ].filter(Boolean).join(' ')}
->
-  <div className="h-70 w-fit overflow-hidden bg-gray-100 shrink-0">
-    <ProjectImage
-      src={project.image}
-      alt={`${project.title}, ${project.location}`}
-      fit={fit}
-    />
-  </div>
-</div>
+      {/* Image — grows to dominate on compact */}
+      <div
+        className={[
+          compact ? 'mx-2 my-2 flex-1 min-h-0' : 'mx-3 my-3',
+          'flex justify-center overflow-hidden',
+          !alwaysExpanded && 'transition-opacity duration-500',
+          !alwaysExpanded && (expanded ? 'opacity-100' : 'opacity-0'),
+        ].filter(Boolean).join(' ')}
+      >
+        <div className={`${compact ? 'h-full w-full' : 'h-70 w-fit'} overflow-hidden bg-gray-100 shrink-0`}>
+          <ProjectImage
+            src={project.image}
+            alt={`${project.title}, ${project.location}`}
+            fit={fit}
+          />
+        </div>
+      </div>
 
-      {/* Bottom text */}
-      <div className="px-4 pb-5 shrink-0">
-        <p className={`font-body text-[10px] tracking-[0.25em] uppercase font-bold mb-1 transition-colors duration-300 ${
+      {/* Bottom text — shrink padding/fonts on compact */}
+      <div className={`${compact ? 'px-3 pb-3' : 'px-4 pb-5'} shrink-0`}>
+        <p className={`font-body ${compact ? 'text-[9px]' : 'text-[10px]'} tracking-[0.25em] uppercase font-bold mb-1 transition-colors duration-300 ${
           expanded ? 'text-accent' : 'text-gray-300'
         }`}>
           {project.location}
         </p>
-        <h3 className={`font-body text-base font-medium leading-tight transition-colors duration-300 ${
+        <h3 className={`font-body ${compact ? 'text-sm' : 'text-base'} font-medium leading-tight transition-colors duration-300 ${
           expanded ? 'text-black' : 'text-gray-400'
         }`}>
           {project.title}
         </h3>
 
-        {/* Status badge */}
         <div className={`overflow-hidden transition-all duration-500 ${
           expanded ? 'max-h-10 mt-2 opacity-100' : 'max-h-0 opacity-0'
         }`}>
@@ -101,7 +100,6 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded , fit = 'co
         </div>
       </div>
 
-      {/* Bottom accent line */}
       <div className={`h-0.5 bg-accent transition-all duration-700 ${expanded ? 'w-full' : 'w-0'}`} />
     </a>
   );
@@ -141,7 +139,7 @@ export default function PortfolioGallery() {
               key={project.id}
               className="border-r border-gray-200 last:border-r-0 bg-white"
             >
-              <Panel project={project} alwaysExpanded fit="contain" />
+              <Panel project={project} alwaysExpanded fit="contain" compact/>
             </SwiperSlide>
           ))}
         </Swiper>

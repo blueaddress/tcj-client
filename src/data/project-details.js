@@ -1,6 +1,6 @@
 import arya from '../assets/images/projects/arya.webp';
 import ira from '../assets/images/projects/ira.webp';
-import vivanta from '../assets/images/projects/vivanta.webp';
+import vivanta from '../assets/images/projects/vivanta.png';
 import kingscourt from '../assets/images/projects/kings-court.webp';
 
 export const PROJECTS_DATA = [

@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y } from 'swiper/modules';
 import arya from '../../assets/images/projects/arya.webp';
 import ira from '../../assets/images/projects/ira2.webp';
-import vivanta from '../../assets/images/projects/vivanta.webp';
+import vivanta from '../../assets/images/projects/vivanta.png';
 import kingscourt from '../../assets/images/projects/kings-court.webp';
 
 const FALLBACK = "/images/tcj-banner-placeholder.png";

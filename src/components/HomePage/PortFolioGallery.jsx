@@ -15,13 +15,13 @@ const developments = [
   { id: "tcj-vivanta", year: "2026", title: "Vivanta",      location: "Ambernath West", status: "Ongoing",   image: vivanta.src ,     slug: "tcj-vivanta" },
 ];
 
-function ProjectImage({ src, alt }) {
+function ProjectImage({ src, alt, fit = 'cover' }) {
   const [imgSrc, setImgSrc] = useState(src);
   return (
     <img
       src={imgSrc}
       alt={alt}
-      className="w-full h-full object-cover object-center"
+      className={`w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'} object-center`}
       onError={() => setImgSrc(FALLBACK)}
       loading="lazy"
       decoding="async"
@@ -30,7 +30,7 @@ function ProjectImage({ src, alt }) {
 }
 
 /* ─── Single panel — shared by both mobile (Swiper slide) and desktop (accordion) ── */
-function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded }) {
+function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded , fit = 'cover'}) {
   const expanded = alwaysExpanded || isActive;
 
   return (
@@ -73,6 +73,7 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded }) {
     <ProjectImage
       src={project.image}
       alt={`${project.title}, ${project.location}`}
+      fit={fit}
     />
   </div>
 </div>
@@ -140,7 +141,7 @@ export default function PortfolioGallery() {
               key={project.id}
               className="border-r border-gray-200 last:border-r-0 bg-white"
             >
-              <Panel project={project} alwaysExpanded />
+              <Panel project={project} alwaysExpanded fit="contain" />
             </SwiperSlide>
           ))}
         </Swiper>

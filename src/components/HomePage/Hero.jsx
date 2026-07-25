@@ -29,7 +29,7 @@ const slides = [
 ];
 
 const MOBILE_VIDEO     = "/images/hero/output-compressed.webm";
-const MOBILE_POSTER    = "/images/hero/banner-1-mobile.png";
+const MOBILE_POSTER    = "/images/hero/first_frame.webp";
 
 function MobileHero() {
   const videoRef = useRef(null);

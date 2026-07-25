@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import arya from '../../assets/images/projects/arya.webp';
-import ira from '../../assets/images/projects/ira.webp';
+import ira from '../../assets/images/projects/ira3.webp';
 import vivanta from '../../assets/images/projects/vivanta.png';
 
 const developments = [
@@ -57,11 +57,11 @@ export default function CurrentDevelopments() {
               </div>
 
               {/* Text */}
-              <div className="space-y-1">
+              <div className="space-y-1 text-center">
                 <h3 className="font-body text-lg md:text-xl lg:text-2xl text-black font-medium leading-tight group-hover:text-accent transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="font-body text-sm text-gray-500 tracking-tight">
+                <p className="font-body text-lg text-gray-500 tracking-tight">
                   {project.location}, Maharashtra
                 </p>
               </div>

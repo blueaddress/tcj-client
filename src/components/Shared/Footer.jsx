@@ -3,13 +3,40 @@ import { useState } from "react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const handleSubscribe = () => {
-    if (!email || !email.includes("@")) return;
-    // TODO: wire up your actual API call here
-    setSubmitted(true);
-    setEmail("");
+const [email, setEmail] = useState("");
+const [submitted, setSubmitted] = useState(false);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState("");
+  const handleSubscribe = async () => {
+  if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+    setError("Please enter a valid email");
+    return;
+  }
+
+  setLoading(true);
+  setError("");
+
+  try {
+    const response = await fetch("https://formspree.io/f/xwvgwrej", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      const data = await response.json().catch(() => null);
+      setError(data?.errors?.[0]?.message || "Something went wrong. Please try again.");
+    }
+  } catch (err) {
+    setError("Network error. Please try again.");
+  } finally {
+    setLoading(false);
+  }
 };
 
   const links = [
@@ -79,21 +106,29 @@ export default function Footer() {
                 </p>
               </div>
             ) : (
-              <div className="flex w-full">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
-                  placeholder="Email"
-                  className="min-w-0 flex-1 border border-gray-300 px-3 md:px-4 py-2.5 md:py-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
-                />
-                <button
-                  onClick={handleSubscribe}
-                  className="bg-[#e31e24] text-white px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-black transition-colors whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
+              <div>
+                <div className="flex w-full">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (error) setError("");
+                    }}
+                    onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
+                    placeholder="Email"
+                    disabled={loading}
+                    className="min-w-0 flex-1 border border-gray-300 px-3 md:px-4 py-2.5 md:py-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 disabled:opacity-60"
+                  />
+                  <button
+                    onClick={handleSubscribe}
+                    disabled={loading}
+                    className="bg-[#e31e24] text-white px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-black transition-colors whitespace-nowrap disabled:opacity-70"
+                  >
+                    {loading ? "Sending..." : "Subscribe"}
+                  </button>
+                </div>
+                {error && <p className="text-xs text-[#e31e24] mt-1 font-body">{error}</p>}
               </div>
             )}
           </div>

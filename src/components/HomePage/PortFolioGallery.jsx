@@ -48,13 +48,13 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded, fit = 'cov
         alwaysExpanded && 'h-full',
       ].filter(Boolean).join(' ')}
     >
-      {/* Vertical year — shrink on compact */}
+      {/* Horizontal year — shrink on compact */}
       <div className={`${compact ? 'pt-3' : 'pt-8'} flex justify-center shrink-0`}>
         <span
           className={`font-heading ${compact ? 'text-3xl' : 'text-5xl'} select-none transition-colors duration-300 ${
             expanded ? 'text-black' : 'text-gray-300'
           }`}
-          style={{ writingMode: 'vertical-lr', textOrientation: 'mixed' }}
+          style={{ writingMode: 'horizontal-lr', textOrientation: 'mixed' }}
         >
           {project.year}
         </span>
@@ -69,7 +69,7 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded, fit = 'cov
           !alwaysExpanded && (expanded ? 'opacity-100' : 'opacity-0'),
         ].filter(Boolean).join(' ')}
       >
-        <div className={`${compact ? 'h-full w-full' : 'h-70 w-fit'} overflow-hidden bg-gray-100 shrink-0`}>
+        <div className={`${compact ? 'h-full w-full' : 'h-70 w-full'} overflow-hidden bg-gray-50 shrink-0`}>
           <ProjectImage
             src={project.image}
             alt={`${project.title}, ${project.location}`}
@@ -80,12 +80,12 @@ function Panel({ project, isActive, onEnter, onLeave, alwaysExpanded, fit = 'cov
 
       {/* Bottom text — shrink padding/fonts on compact */}
       <div className={`${compact ? 'px-3 pb-3' : 'px-4 pb-5'} shrink-0`}>
-        <p className={`font-body ${compact ? 'text-[9px]' : 'text-[10px]'} tracking-[0.25em] uppercase font-bold mb-1 transition-colors duration-300 ${
+        <p className={`font-body ${compact ? 'text-[14px]' : 'text-[16px]'} tracking-[0.25em] uppercase font-bold mb-1 transition-colors duration-300 ${
           expanded ? 'text-accent' : 'text-gray-300'
         }`}>
           {project.location}
         </p>
-        <h3 className={`font-body ${compact ? 'text-sm' : 'text-base'} font-medium leading-tight transition-colors duration-300 ${
+        <h3 className={`font-body ${compact ? 'text-base' : 'text-lg'} font-medium leading-tight transition-colors duration-300 ${
           expanded ? 'text-black' : 'text-gray-400'
         }`}>
           {project.title}
@@ -132,14 +132,14 @@ export default function PortfolioGallery() {
             480: { slidesPerView: 1.8 },
             600: { slidesPerView: 2.2 },
           }}
-          style={{ height: '480px' }}
+          style={{ height: '420px' }}
         >
           {developments.map((project) => (
             <SwiperSlide
               key={project.id}
-              className="border-r border-gray-200 last:border-r-0 bg-white"
+              className="border-r border-gray-50 last:border-r-0 bg-white"
             >
-              <Panel project={project} alwaysExpanded fit="contain" compact/>
+              <Panel project={project} alwaysExpanded fit="cover" compact/>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -161,7 +161,7 @@ export default function PortfolioGallery() {
       </div>
 
       {/* ── Desktop: Accordion (md+) ─────────────────────────────────────── */}
-      <div className="hidden md:flex h-150 w-full border border-gray-200 overflow-hidden">
+      <div className="hidden md:flex h-120 w-full border border-gray-200 overflow-hidden">
         {developments.map((project) => (
           <Panel
             key={project.id}
@@ -172,7 +172,6 @@ export default function PortfolioGallery() {
           />
         ))}
       </div>
-
     </section>
   );
 }

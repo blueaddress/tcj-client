@@ -9,6 +9,7 @@ import PortFolioGallery from '../components/HomePage/PortFolioGallery';
 import Stats from '../components/HomePage/Stats.jsx';
 import EnquireNow from "../components/HomePage/EnquireNow.jsx";
 import Footer from "../components/Shared/Footer.jsx";
+import WhatsAppButton from '../components/Shared/WhatsappButton';
 
 ---
 <HomeLayout 
@@ -38,4 +39,5 @@ import Footer from "../components/Shared/Footer.jsx";
 		<EnquireNow client:visible/>
 		<Footer client:visible/>
 	</ZoomWrapper>
+	<WhatsAppButton client:load phone="+919307741303" />
 </HomeLayout>

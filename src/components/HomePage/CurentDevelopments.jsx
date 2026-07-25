@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import arya from '../../assets/images/projects/arya.webp';
 import ira from '../../assets/images/projects/ira3.webp';
-import vivanta from '../../assets/images/projects/vivanta.png';
+import vivanta from '../../assets/images/projects/vivanta.webp';
 
 const developments = [
   // { id: "kings-court", year: "2018", title: "King's Court", location: "Kalyan West", status: "Completed", image: "/images/projects/kings-court.jpg", slug: "kings-court" },

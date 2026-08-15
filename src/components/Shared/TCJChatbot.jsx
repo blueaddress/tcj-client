@@ -15,9 +15,9 @@ export default function TCJChatbot() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-20 md:right-6 right-3.5 sm:bottom-24 z-50 flex flex-col items-end gap-3">
       {isOpen && (
-        <div className="w-90 max-w-[90vw] h-150 max-h-[70vh] rounded-xl shadow-2xl overflow-hidden">
+        <div className="w-[340px] h-[65dvh] max-h-[440px] sm:w-[380px] sm:h-[550px] sm:max-h-[70vh] rounded-xl overflow-hidden">
           <ChatBot
             settings={{
               general: themeSettings,
@@ -27,14 +27,14 @@ export default function TCJChatbot() {
                 avatar: "/images/tcj.png",
               },
               chatHistory: { storageKey: "tcj_chat_history" },
-              tooltip: { mode: "NEVER" }, // removes the "Talk to me" bubble
-              chatButton: { icon: undefined }, // hide its own launcher, we use ours
+              tooltip: { mode: "NEVER" },
+              chatButton: { icon: undefined },
             }}
-              styles={{
-                chatWindowStyle: { width: "100%", height: "100%" },
-                botBubbleStyle: { maxWidth: "85%" },
-                userBubbleStyle: { maxWidth: "85%" },
-              }}
+            styles={{
+              chatWindowStyle: { width: "100%", height: "100%", border: "none", boxShadow: "none" },
+              botBubbleStyle: { maxWidth: "85%" },
+              userBubbleStyle: { maxWidth: "85%" },
+            }}
             flow={flow}
           />
         </div>

@@ -11,8 +11,8 @@ import kingscourt from '../../assets/images/projects/kings-court.webp';
 import projectImg from '../../assets/images/projects/project-banner.png';
 
 const projectsData = [
-  { id: 1, title: "Ira",          location: "Ambernath", status: "Ongoing",   image: ira.src ,         slug: "tcj-ira" },
-  { id: 2, title: "Arya",         location: "Ambernath", status: "Ongoing",   image: arya.src ,        slug: "tcj-arya" },
+  { id: 1, title: "Ira",          location: "Kalyan", status: "Ongoing",   image: ira.src ,         slug: "tcj-ira" },
+  { id: 2, title: "Arya",         location: "Kalyan", status: "Ongoing",   image: arya.src ,        slug: "tcj-arya" },
   { id: 3, title: "Vivanta",      location: "Ambernath", status: "Ongoing",   image: vivanta.src ,     slug: "tcj-vivanta" },
   { id: 4, title: "King's Court", location: "Ambernath", status: "Completed", image: kingscourt.src , slug: "kings-court" },
 ];

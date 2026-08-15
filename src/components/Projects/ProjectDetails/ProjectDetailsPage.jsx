@@ -17,7 +17,7 @@ export default function ProjectDetailsPage({ project }) {
       {/* 2. Main Content Grid */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-13 gap-16">
             
             {/* Left Content Column */}
             <div className="lg:col-span-8 space-y-16">
@@ -54,7 +54,7 @@ export default function ProjectDetailsPage({ project }) {
             </div>
 
             {/* Right Sidebar */}
-            <aside className="lg:col-span-4">
+            <aside className="lg:col-span-5">
               <div className="sticky top-24 space-y-8">
                 {/* Project Status Card */}
                 <div className="bg-primary-bg p-10 text-white rounded-sm">

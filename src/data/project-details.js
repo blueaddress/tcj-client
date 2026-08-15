@@ -11,7 +11,7 @@ export const PROJECTS_DATA = [
     developer: "TCJ Realty",
     tagline: "Where Luxury Meets Legacy",
     reraNumber: "P51700047140",
-    status: "Ready to Move (OC Received)",
+    status: "OC Received",
     image: vivanta.src ,
     location: {
       address: "Thakurpada Road, Javsai Gaon, Ambernath (W), Maharashtra 421501",
@@ -19,7 +19,7 @@ export const PROJECTS_DATA = [
       description: "Hilltop location overlooking Javsai with picturesque views."
     },
     overview: {
-      description: "Meticulously crafted residential haven featuring 4 towers of 7 floors each. Designed with an open-concept floor plan connecting living, dining, and kitchen areas. Includes a grand foyer with high ceilings.",
+      description: "A 7.5-acre residential community in Ambernath offering thoughtfully designed 1 & 2 BHK homes, open spaces and everyday conveniences — created for families looking for a better quality of life.",
       totalUnits: 144,
       totalTowers: 4,
       totalFloors: 7,
@@ -34,16 +34,10 @@ export const PROJECTS_DATA = [
       { name: "KONE High-speed Elevators", icon: "ArrowUpCircle" },
       { name: "Lobby Drop-off Area", icon: "Map" },
       { name: "Gymnasium", icon: "Dumbbell" },
-      { name: "Grand Clubhouse", icon: "Landmark" },
-      { name: "Community Hall", icon: "Users" },
       { name: "Library", icon: "Library" },
       { name: "Indoor Games", icon: "Gamepad2" },
       { name: "Kids Swimming Pool", icon: "Waves" },
       { name: "Landscaped Entrance Drive", icon: "Trees" },
-      { name: "Central Green Park", icon: "Trees" },
-      { name: "Kids Play Area", icon: "Baby" },
-      { name: "Yoga & Meditation Area", icon: "Wind" },
-      { name: "Jogging Track", icon: "Construction" },
       { name: "Rainwater Harvesting", icon: "Droplets" }
     ],
     specifications: {
@@ -54,9 +48,17 @@ export const PROJECTS_DATA = [
       livingRoom: "Decorative False Ceiling"
     },
     connectivity: [
-      { landmark: "Ambernath Station", distance: "2.5 km" },
-      { landmark: "Kalyan Badlapur Road", distance: "2 km" },
-      { landmark: "D Mart", distance: "Proximity" }
+      { landmark: "Ambernath Station", distance: "7 mins" },
+      { landmark: "Balajee Hospital", distance: "1 min" },
+      { landmark: "OFA Hospital", distance: "7 mins" },
+      { landmark: "Sushrut Hospital", distance: "7 mins" },
+      { landmark: "Gurukul School", distance: "1 min" },
+      { landmark: "Kendriya Vidyalaya", distance: "7 mins" },
+      { landmark: "MPF Sports Ground", distance: "3 mins" },
+      { landmark: "Lord Murugan Temple", distance: "1 min" },
+      { landmark: "Shree Ayyappa Temple", distance: "2 mins" },
+      { landmark: "Matka Chowk", distance: "6 mins" },
+      { landmark: "D Mart", distance: "7 mins" }
     ]
   },
   {
@@ -69,11 +71,11 @@ export const PROJECTS_DATA = [
     status: "Ready to Move",
     image: arya.src,
     location: {
-      address: "Near Podar International School, Ambernath (W), Maharashtra 421501",
-      neighborhood: "Ambernath West"
+      address: "Near Podar International School, Kalyan (W), Maharashtra 421501",
+      neighborhood: "Kalyan West"
     },
     overview: {
-      description: "A symbol of modern architecture focused on maximizing natural light and ventilation. Modern urban retreat designed for comfort and efficiency.",
+      description: "TCJ Arya is an intimate, low-density residential address featuring thoughtfully planned, spacious 1 BHK homes. Designed for those who prefer more space, greater privacy, and a quieter way of living.",
       totalFloors: "Ground + 7"
     },
     configurations: [
@@ -87,7 +89,6 @@ export const PROJECTS_DATA = [
       { name: "Intercom Facility", icon: "PhoneCall" },
       { name: "Gated Community", icon: "ShieldCheck" },
       { name: "Fire Fighting System", icon: "Flame" },
-      { name: "Refuge Area", icon: "ShieldAlert" },
       { name: "Stilt Parking", icon: "Car" },
       { name: "Common Duct for AC piping", icon: "Thermometer" }
     ],
@@ -99,9 +100,13 @@ export const PROJECTS_DATA = [
       electrical: "Concealed Copper wiring with modular switches"
     },
     connectivity: [
-      { landmark: "Podar International School", distance: "0.2 km" },
-      { landmark: "Ambernath Station", distance: "1.8 km" },
-      { landmark: "Suryodaya Hospital", distance: "1.0 km" }
+      { landmark: "Aayush Multispeciality Hospital	", distance: "5 mins" },
+      { landmark: "Birla College	", distance: "6 mins" },
+      { landmark: "D-Mart, Godrej Hill ", distance: "3 mins" },
+      { landmark: "Narayana eTechno School	", distance: "5 mins" },
+      { landmark: "Podar International School", distance: "6 mins" },
+      { landmark: "The Cambria International School", distance: "6 mins" },
+      { landmark: "VIBGYOR Roots & Rise, Khadakpada ", distance: "5 mins" }
     ]
   },
   {
@@ -114,11 +119,11 @@ export const PROJECTS_DATA = [
     status: "Ongoing",
     image: ira.src ,
     location: {
-      address: "Opposite Balajee Hospital, Ambernath West, Maharashtra 421501",
-      neighborhood: "Ambernath West"
+      address: "Opposite Balajee Hospital, Kalyan West, Maharashtra 421501",
+      neighborhood: "Kalyan West"
     },
     overview: {
-      description: "Premium development emphasizing high-end specifications and lifestyle conveniences. Features a rooftop 'Sky Lifestyle' concept for elevated living.",
+      description: "TCJ Ira is a low-density residential development offering spacious 1 & 2 BHK homes in a more private, intimate setting. Designed for families who value comfort, efficient planning, and a quieter everyday lifestyle.",
       totalFloors: "Towering structure with scenic city views"
     },
     configurations: [
@@ -126,15 +131,14 @@ export const PROJECTS_DATA = [
       { type: "2 BHK Luxe", carpetArea: "600+ Sq. Ft." }
     ],
     amenities: [
-      { name: "Rooftop Sky Garden", icon: "Trees" },
-      { name: "State-of-the-art Fitness Center", icon: "Dumbbell" },
-      { name: "Automated Elevators", icon: "ArrowUpCircle" },
-      { name: "Elegant Lobby", icon: "Sparkles" },
-      { name: "Landscaped Sit-outs", icon: "LayoutGrid" },
-      { name: "EV Charging Station Points", icon: "Zap" },
-      { name: "Rainwater Harvesting", icon: "Droplets" },
-      { name: "Advanced Fire Safety", icon: "Flame" },
-      { name: "Reserved Stilt Parking", icon: "Car" }
+      { name: "Grand Entrance Lobby", icon: "Sparkles" },
+      { name: "Elevators with Power Backup", icon: "Zap" },
+      { name: "24x7 CCTV Surveillance", icon: "Video" },
+      { name: "Intercom Facility", icon: "PhoneCall" },
+      { name: "Gated Community", icon: "ShieldCheck" },
+      { name: "Fire Fighting System", icon: "Flame" },
+      { name: "Stilt Parking", icon: "Car" },
+      { name: "Common Duct for AC piping", icon: "Thermometer" }
     ],
     specifications: {
       flooring: "Large format Vitrified Tiles",
@@ -144,9 +148,13 @@ export const PROJECTS_DATA = [
       security: "Video Door Phone, 3-tier security"
     },
     connectivity: [
-      { landmark: "Balajee Hospital", distance: "Immediate" },
-      { landmark: "Forest Naka", distance: "0.5 km" },
-      { landmark: "Ambernath West Market", distance: "1.2 km" }
+      { landmark: "Aayush Multispeciality Hospital	", distance: "5 mins" },
+      { landmark: "Birla College	", distance: "6 mins" },
+      { landmark: "D-Mart, Godrej Hill ", distance: "3 mins" },
+      { landmark: "Narayana eTechno School	", distance: "5 mins" },
+      { landmark: "Podar International School", distance: "6 mins" },
+      { landmark: "The Cambria International School", distance: "6 mins" },
+      { landmark: "VIBGYOR Roots & Rise, Khadakpada ", distance: "5 mins" }
     ]
   },
   {

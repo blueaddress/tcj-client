@@ -1,32 +1,40 @@
-// src/components/TCJChatbot.jsx
+// TCJChatbot.jsx
 
 import { useState } from "react";
 import ChatBot from "react-chatbotify";
 import { flow } from "../../data/chatbotFlow";
 
 const themeSettings = {
-  primaryColor: "#0A264F", // navy
-  secondaryColor: "#C9A84C", // gold
+  primaryColor: "#0A264F",
+  secondaryColor: "#C9A84C",
   fontFamily: "Satoshi, sans-serif",
+  embedded: true, // renders inline in our container, not as its own floating overlay
 };
 
 export default function TCJChatbot() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-24 right-6 z-50">
+    <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3">
       {isOpen && (
-        <div className="mb-3 w-[320px] max-w-[90vw] rounded-xl shadow-2xl overflow-hidden">
+        <div className="w-90 max-w-[90vw] h-150 max-h-[70vh] rounded-xl shadow-2xl overflow-hidden">
           <ChatBot
             settings={{
               general: themeSettings,
               header: {
                 title: "TCJ Realty",
                 showAvatar: true,
-                avatar: "/favicons/favicon.ico", // or "/tcj-icon.png"
+                avatar: "/images/tcj.png",
               },
               chatHistory: { storageKey: "tcj_chat_history" },
+              tooltip: { mode: "NEVER" }, // removes the "Talk to me" bubble
+              chatButton: { icon: undefined }, // hide its own launcher, we use ours
             }}
+              styles={{
+                chatWindowStyle: { width: "100%", height: "100%" },
+                botBubbleStyle: { maxWidth: "85%" },
+                userBubbleStyle: { maxWidth: "85%" },
+              }}
             flow={flow}
           />
         </div>

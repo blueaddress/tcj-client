@@ -42,10 +42,10 @@ export default function TCJChatbot() {
 
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center"
+        className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center bg-white"
         aria-label="Open chat"
       >
-        <img src="/favicons/favicon.ico" alt="TCJ Realty" className="w-8 h-8" />
+        <img src="/images/tcj.png" alt="TCJ Realty" className="w-8 h-8" />
       </button>
     </div>
   );

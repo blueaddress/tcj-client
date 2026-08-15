@@ -1,7 +1,14 @@
 export default function WhatsAppButton({
   phone = "+919307741303",
-  message = "https://www.tcjrealty.in Hi, I'd like to know more about your properties.",
+  projectName, 
+  projectUrl
 }) {
+  const baseMessage  = projectName
+    ? `Hi, I'd like to know more about ${projectName}.`
+    : `Hi, I'd like to know more about your properties.`;
+
+   const message = projectUrl ? `${projectUrl} ${baseMessage}` : baseMessage;
+
   const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   return (

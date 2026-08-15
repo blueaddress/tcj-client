@@ -3,7 +3,8 @@ import '../../../styles/global.css'
 import HomeLayout from '../../../layouts/HomeLayout.astro';
 import { PROJECTS_DATA } from '../../../data/project-details.js';
 import ProjectDetailsPage from '../../../components/Projects/ProjectDetails/ProjectDetailsPage.jsx';
-
+import WhatsAppButton from '../../../components/Shared/WhatsappButton';
+import ZoomWrapper from '../../../components/Shared/ZoomWrapper.jsx';
 export async function getStaticPaths() {
   return PROJECTS_DATA.map((project) => ({
     params: { slug: project.slug },
@@ -22,5 +23,13 @@ const ogImageUrl = `${siteUrl}${project.image}`;
   ogImage={ogImageUrl}
   description={`${project.overview.description}`}
 >
-  <ProjectDetailsPage client:load project={project} />
+    <ZoomWrapper>
+      <ProjectDetailsPage client:load project={project} />
+    </ZoomWrapper>
+  	<WhatsAppButton
+      client:load
+      phone="+919307741303"
+      projectName={project.projectName}
+      projectUrl={Astro.url.href}
+    />
 </HomeLayout>

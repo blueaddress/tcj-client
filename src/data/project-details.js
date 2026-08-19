@@ -36,7 +36,6 @@ export const PROJECTS_DATA = [
       { name: "Gymnasium", icon: "Dumbbell" },
       { name: "Library", icon: "Library" },
       { name: "Indoor Games", icon: "Gamepad2" },
-      { name: "Kids Swimming Pool", icon: "Waves" },
       { name: "Landscaped Entrance Drive", icon: "Trees" },
       { name: "Rainwater Harvesting", icon: "Droplets" }
     ],

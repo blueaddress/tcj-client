@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { MapPin} from "lucide-react";
 import Amenities from './Amenities';
 
+
 export default function ProjectDetailsPage({ project }) {
   if (!project) return null;
 
@@ -13,7 +14,6 @@ export default function ProjectDetailsPage({ project }) {
     <main className="bg-white">
       {/* 1. Header Banner */}
       <Banner title={project.projectName} tagline={project.tagline} image={project.image}/>
-
       {/* 2. Main Content Grid */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">

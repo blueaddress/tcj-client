@@ -5,6 +5,7 @@ import { PROJECTS_DATA } from '../../../data/project-details.js';
 import ProjectDetailsPage from '../../../components/Projects/ProjectDetails/ProjectDetailsPage.jsx';
 import WhatsAppButton from '../../../components/Shared/WhatsappButton';
 import ZoomWrapper from '../../../components/Shared/ZoomWrapper.jsx';
+import EnquiryPopup from '../../../components/Projects/ProjectDetails/EnquiryPopup';
 export async function getStaticPaths() {
   return PROJECTS_DATA.map((project) => ({
     params: { slug: project.slug },
@@ -32,4 +33,5 @@ const ogImageUrl = `${siteUrl}${project.image}`;
       projectName={project.projectName}
       projectUrl={Astro.url.href}
     />
+    <EnquiryPopup client:load projectName={project.projectName} />
 </HomeLayout>

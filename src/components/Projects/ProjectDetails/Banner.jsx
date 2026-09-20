@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
-export default function Banner({image, title, tagline}) {
-
+export default function Banner({ image, title, tagline }) {
   return (
-    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-      
+    <section id="bannerImg" className="relative h-[65vh] flex items-center justify-center overflow-hidden">
+
       {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${image})` }}
+      <img
+        src={image}
+        alt={title}
+        className="absolute inset-0 z-0 w-full h-full object-cover"
       />
 
       {/* Dark overlay for text readability */}

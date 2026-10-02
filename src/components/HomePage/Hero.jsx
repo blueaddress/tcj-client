@@ -14,9 +14,9 @@ const placeholder = "/images/tcj-banner-placeholder.png";
 const slides = [
   {
     id: 1,
-    desktop: bannerImg('banner-1-desktop.webp'),
+    desktop: bannerImg('vivanta_desktop.webp'),
     wide:    bannerImg('banner-1-wide.webp'),
-    tablet:  bannerImg('banner-1-tablet.webp'),
+    tablet:  bannerImg('vivanta-tablet.webp'),
     alt: "TCJ Realty Luxury Property",
   },
   {
@@ -74,15 +74,7 @@ function MobileHero() {
 
 function DesktopHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-brand-navy">
-      <style>{`
-        .hero-swiper,
-        .hero-swiper .swiper-wrapper,
-        .hero-swiper .swiper-slide {
-          height: 100% !important;
-          width: 100% !important;
-        }
-      `}</style>
+    <section className="relative w-full mt-26 overflow-hidden bg-brand-navy">
 
       <Swiper
         modules={[Autoplay, Navigation, EffectFade]}
@@ -92,7 +84,8 @@ function DesktopHero() {
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         navigation={{ nextEl: ".hero-next", prevEl: ".hero-prev" }}
         loop={true}
-        className="hero-swiper h-full w-full"
+        autoHeight={true}   // <-- key change: Swiper sizes container to active slide
+        className="hero-swiper w-full"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
